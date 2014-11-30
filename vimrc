@@ -106,7 +106,7 @@ nnoremap <silent> <leader>p :CtrlP<CR>
 nnoremap <silent> <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
 " key-mapping for SingleCompile(compile or run a single source file)
 nnoremap <silent> <F9> :SCCompile<CR>
-nnoremap <silent> <F10> :SCCompileRun<CR>
+nnoremap <silent> <leader>r :SCCompileRun<CR>
 
 " configure for nerdtree-tabs
 let g:nerdtree_tabs_open_on_console_startup=1
