@@ -84,10 +84,32 @@ setup_vundle() {
   vim -u $HOME/.vim/vimrc.bundles +PluginInstall +qall
 }
 
-clone_repo    "successfully cloned" $app_name
-create_vimrc  "setting up vimrc"
-clone_vundle  "successfully cloned Vundle"
-setup_vundle  "now updating/installing plugins using Vundle"
-echo 'installing eVim successfully ...'
+do_install() {
+  clone_repo    "successfully cloned" $app_name
+  create_vimrc  "setting up vimrc"
+  clone_vundle  "successfully cloned Vundle"
+  setup_vundle  "now updating/installing plugins using Vundle"
+  echo 'installing eVim successfully ...'
+}
+
+do_uninstall() {
+  echo "starting uninstall eVim ..."
+  rm -rf $HOME/.vim
+  rm -rf $HOME/.vimrc
+  echo "uninstall successfully ..."
+}
+
+case "$1" in
+  'install')
+    do_install
+    ;;
+  'uninstall')
+    do_uninstall
+    ;;
+  *)
+    echo "USAGE: $0 {install|uninstall}"
+    exit 3
+    ;;
+esac
 
 exit 0

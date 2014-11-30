@@ -81,7 +81,7 @@
   * **Installing eVim**
     
         $ git clone https://github.com/ASMlover/eVim.git
-        $ ./install.sh
+        $ ./install.sh install
 
   * **Building vimproc.vim**
 
