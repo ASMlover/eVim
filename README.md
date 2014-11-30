@@ -17,7 +17,7 @@
 
 # **Install**
 ## **Windows**
-  On Windows [Git](http://msysgit.github.io/), [MinGW](http://www.mingw.org/) and [Clang](http://www.llvm.org/) are required. Also, if you haven't already, you will need to install [Vim](http://www.vim.org/).  
+  On Windows [Git](http://msysgit.github.io/), [MinGW](http://www.mingw.org/) and [Clang](http://www.llvm.org/) are required. Also, if you haven't already, you will need to install [Vim](http://www.vim.org/).
   Requires Vim7.3.885+ compiled with [if_lua](http://vimdoc.sourceforge.net/htmldoc/if_lua.html). If :echo has("lua") returns 1, then you're done; otherwise, see below.
 
   * **Installing dependencies**
@@ -28,8 +28,8 @@
     - Install [MinGW](http://www.mingw.org/) to C:\
     - Install [Clang](http://www.llvm.org/)
 
-    **Note:** The Vim build may not include the Lua DLL. In that case, [download lua](http://lua-users.org/wiki/LuaBinaries) and put the `lua52.dll` file in the same directory as `gvim.exe`.  
-    **Note:** After installing Vim, you need to add it to your environment variable path. Just like:  
+    **Note:** The Vim build may not include the Lua DLL. In that case, [download lua](http://lua-users.org/wiki/LuaBinaries) and put the `lua52.dll` file in the same directory as `gvim.exe`.
+    **Note:** After installing Vim, you need to add it to your environment variable path. Just like:
 
         \> echo %VIMRUNTIME%
         \> D:\Vim\vim74
@@ -44,7 +44,31 @@
 
             \> cd %HOME%\.vim\bundle\vimproc.vim
             \> mingw32_make -f make_mingw32.mak
+
     - **64bit**
 
             \> cd %HOME%\.vim\bundle\vimproc.vim
             \> mingw32_make -f make_mingw64.mak
+
+
+## **Linux**
+  On Linux [Git](http://git-scm.com/) and [Clang](http://clang.llvm.org/) are required. If you haven't already, you will need to install [Vim](http://www.vim.org/).
+  Requires Vim7.3.885+ compiled with [if_lua](http://vimdoc.sourceforge.net/htmldoc/if_lua.html). If :echo("lua") returns 1, then you're done; otherwise, see below.
+
+  * **Installing Vim**
+    - [vim-7.4.tar.bz2](ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2)
+    - Uninstall old Vim:
+
+            $ sudo apt-get autoremove vim vim-runtime vim-tiny vim-common
+
+    - Install vim7.4(Ubuntu):
+
+            $ sudo apt-get install libncurses5-dev
+            $ sudo apt-get install libpython
+            $ sudo apt-get install liblua5.2-dev
+            $ tar jxvf vim-7.4.tar.bz2
+            $ cd vim74
+            $ ./configure --enable-luainterp --enable-pythoninterp --enable-gui=no --without-x --enable-multibyte
+            $ make 
+            $ sudo make install
+
