@@ -10,8 +10,8 @@
   * `,l` begins aligning lines on a string, usually used as `,l=` to align assignments
   * `,]` brings up [tagbar](https://github.com/majutsushi/tagbar), a sidebar buffer for displaying tags
   * `,p` brings up [ctrlp.vim](https://github.com/kien/ctrlp.vim), a project file filter for easily opening specific files
-  * `F9` compile a single source file(C/C++)
   * `,r` compile and run a single source file(C/C++)
+  * `F9` compile a single source file(C/C++)
   * `F12` making the GVIM window transparent(just for windows platform)
 
 
@@ -25,8 +25,8 @@
     - [Vim 64bit](http://files.kaoriya.net/vim/2013/vim73-kaoriya-win64-20130706.zip)
     - [Vim 32bit alternative](https://tuxproject.de/projects/vim/)
     - [Another alternative](http://wyw.dcweb.cn/#download)
-    - Install [MinGW](http://www.mingw.org/) to C:\
-    - Install [Clang](http://www.llvm.org/)
+    - Install [MinGW](http://www.mingw.org/) to `C:\`
+    - [Clang](http://www.llvm.org/)
 
     **Note:** The Vim build may not include the Lua DLL. In that case, [download lua](http://lua-users.org/wiki/LuaBinaries) and put the `lua52.dll` file in the same directory as `gvim.exe`.  
     **Note:** After installing Vim, you need to add it to your environment variable path. Just like:
@@ -74,7 +74,8 @@
             $ sudo apt-get install liblua5.2-dev
             $ tar jxvf vim-7.4.tar.bz2
             $ cd vim74
-            $ ./configure --enable-luainterp --enable-pythoninterp --enable-gui=no --without-x --enable-multibyte
+            $ ./configure --enable-luainterp --enable-pythoninterp \
+            --enable-gui=no --without-x --enable-multibyte
             $ make 
             $ sudo make install
 
