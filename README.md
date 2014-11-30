@@ -11,7 +11,7 @@
   * `,]` brings up [tagbar](https://github.com/majutsushi/tagbar), a sidebar buffer for displaying tags
   * `,p` brings up [ctrlp.vim](https://github.com/kien/ctrlp.vim), a project file filter for easily opening specific files
   * `F9` compile a single source file(C/C++)
-  * `F10` compile and run a single source file(C/C++)
+  * `,r` compile and run a single source file(C/C++)
   * `F12` making the GVIM window transparent(just for windows platform)
 
 
