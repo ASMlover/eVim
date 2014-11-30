@@ -113,13 +113,8 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_open_on_new_tab=1
 
 " configure for bundles plugins
-" neocomplete configure
-if filereadable(expand("~/.vim/bundles.vimrc/neocomplete.vimrc"))
-  source ~/.vim/bundles.vimrc/neocomplete.vimrc
-endif
-" vim-marching configure
-if filereadable(expand("~/.vim/bundles.vimrc/vim-marching.vimrc"))
-  source ~/.vim/bundles.vimrc/vim-marching.vimrc
+if filewritable(expand("~/.vim/bundles.vimrc/configure.vimrc"))
+  source ~/.vim/bundles.vimrc/configure.vimrc
 endif
 
 " source local vimrc
