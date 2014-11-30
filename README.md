@@ -1,7 +1,7 @@
 # **eVim**
 ***
   
-  Configure files for Vim.
+  **Configure files for Vim**.
 
 
 # **Usage**
@@ -28,7 +28,7 @@
     - Install [MinGW](http://www.mingw.org/) to C:\
     - Install [Clang](http://www.llvm.org/)
 
-    **Note:** The Vim build may not include the Lua DLL. In that case, [download lua](http://lua-users.org/wiki/LuaBinaries) and put the `lua52.dll` file in the same directory as `gvim.exe`.
+    **Note:** The Vim build may not include the Lua DLL. In that case, [download lua](http://lua-users.org/wiki/LuaBinaries) and put the `lua52.dll` file in the same directory as `gvim.exe`.  
     **Note:** After installing Vim, you need to add it to your environment variable path. Just like:
 
         \> echo %VIMRUNTIME%
