@@ -52,10 +52,16 @@
 
 
 ## **Linux**
-  On Linux [Git](http://git-scm.com/) and [Clang](http://clang.llvm.org/) are required. If you haven't already, you will need to install [Vim](http://www.vim.org/).
+  On Linux [Git](http://git-scm.com/), [Clang](http://clang.llvm.org/) and [ag](https://github.com/ggreer/the_silver_searcher) are required. If you haven't already, you will need to install [Vim](http://www.vim.org/).
   Requires Vim7.3.885+ compiled with [if_lua](http://vimdoc.sourceforge.net/htmldoc/if_lua.html). If :echo("lua") returns 1, then you're done; otherwise, see below.
 
-  * **Installing Vim**
+  * **Installing dependencies**
+    - Install ag:
+
+            $ git clone https://github.com/ggreer/the_silver_searcher ag
+            $ ./build.sh
+            $ sudo make install
+
     - [vim-7.4.tar.bz2](ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2)
     - Uninstall old Vim:
 

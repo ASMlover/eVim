@@ -28,9 +28,13 @@
 " do not bother with vi compatibility
 set nocompatible                                             " must be first line
 
+silent func! WINDOWS()
+  return (has("win32") || has("win64"))
+endfunction
+
 " on windows, we also use '.vim' instead of 'vimfiles'; this makes
 " synchronization across (heterogeneous) system easier
-if has("win32") || has("win64")
+if WINDOWS()
   set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
 end
 

@@ -108,6 +108,10 @@ nnoremap <silent> <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <silent> <F9> :SCCompile<CR>
 nnoremap <silent> <F10> :SCCompileRun<CR>
 
+" configure for nerdtree-tabs
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_new_tab=1
+
 " configure for bundles plugins
 " neocomplete configure
 if filereadable(expand("~/.vim/bundles.vimrc/neocomplete.vimrc"))
