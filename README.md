@@ -62,7 +62,7 @@
             $ ./build.sh
             $ sudo make install
 
-    - [vim-7.4.tar.bz2](ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2)
+    - [vim-7.4.tar.bz2](http://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2)
     - Uninstall old Vim:
 
             $ sudo apt-get autoremove vim vim-runtime vim-tiny vim-common
