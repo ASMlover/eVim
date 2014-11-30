@@ -78,3 +78,13 @@
             $ make 
             $ sudo make install
 
+  * **Installing eVim**
+    
+        $ git clone https://github.com/ASMlover/eVim.git
+        $ ./install.sh
+
+  * **Building vimproc.vim**
+
+        $ cd ~/.vim/bundle/vimproc.vim
+        $ make
+
