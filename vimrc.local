@@ -59,8 +59,6 @@ inoremap ] <c-r>=ClosePair(']')<CR>
 " inoremap " ""<ESC>i
 " inoremap ' ''<ESC>i
 
-
-
 " add file header
 nnoremap <silent> <F3> :call TitleDescription(2)<CR>'s
 nnoremap <silent> <F4> :call TitleDescription(0)<CR>'s
@@ -169,6 +167,71 @@ func! AddFileHeader4Script()
   echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
 endfunction
 
+func! AddFileHeader4Python()
+  call append(0, "#!/usr/bin/env python")
+  call append(1, "# -*- encoding: utf-8 -*-")
+  call append(2, "#")
+  call append(3, "# Copyright (c) ".strftime("%Y")." ASMlover. All rights reserved.")
+  call append(4, "#")
+  call append(5, "# Redistribution and use in source and binary forms, with or without")
+  call append(6, "# modification, are permitted provided that the following conditions")
+  call append(7, "# are met:")
+  call append(8, "#")
+  call append(9, "#  * Redistributions of source code must retain the above copyright")
+  call append(10,"#    notice, this list ofconditions and the following disclaimer.")
+  call append(11,"#")
+  call append(12,"#  * Redistributions in binary form must reproduce the above copyright")
+  call append(13,"#    notice, this list of conditions and the following disclaimer in")
+  call append(14,"#    the documentation and/or other materialsprovided with the")
+  call append(15,"#    distribution.")
+  call append(16,"#")
+  call append(17,"# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS")
+  call append(18,"# \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT")
+  call append(19,"# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS")
+  call append(20,"# FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE")
+  call append(21,"# COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,")
+  call append(22,"# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,")
+  call append(23,"# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;")
+  call append(24,"# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER")
+  call append(25,"# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT")
+  call append(26,"# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN")
+  call append(27,"# ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE")
+  call append(28,"# POSSIBILITY OF SUCH DAMAGE.")
+  echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
+endfunction
+
+func! AddFileHeader4Shell()
+  call append(0, "#!/usr/bin/env bash")
+  call append(1, "#")
+  call append(2, "# Copyright (c) ".strftime("%Y")." ASMlover. All rights reserved.")
+  call append(3, "#")
+  call append(4, "# Redistribution and use in source and binary forms, with or without")
+  call append(5, "# modification, are permitted provided that the following conditions")
+  call append(6, "# are met:")
+  call append(7, "#")
+  call append(8, "#  * Redistributions of source code must retain the above copyright")
+  call append(9, "#    notice, this list ofconditions and the following disclaimer.")
+  call append(10,"#")
+  call append(11,"#  * Redistributions in binary form must reproduce the above copyright")
+  call append(12,"#    notice, this list of conditions and the following disclaimer in")
+  call append(13,"#    the documentation and/or other materialsprovided with the")
+  call append(14,"#    distribution.")
+  call append(15,"#")
+  call append(16,"# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS")
+  call append(17,"# \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT")
+  call append(18,"# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS")
+  call append(19,"# FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE")
+  call append(20,"# COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,")
+  call append(21,"# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,")
+  call append(22,"# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;")
+  call append(23,"# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER")
+  call append(24,"# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT")
+  call append(25,"# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN")
+  call append(26,"# ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE")
+  call append(27,"# POSSIBILITY OF SUCH DAMAGE.")
+  echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
+endfunction
+
 " 0: default/C 
 " 1: cpp
 " 2: Script
@@ -198,9 +261,10 @@ autocmd BufNewFile *.c call AddFileHeader4C()
 autocmd BufNewFile *.cpp call AddFileHeader4CPP()
 autocmd BufNewFile *.cc call AddFileHeader4CPP()
 autocmd BufNewFile *.hpp call AddFileHeader4CPP()
-autocmd BufNewFile *.py call AddFileHeader4CPP()
-autocmd BufNewFile *.mk call AddFileHeader4CPP()
-
+autocmd BufNewFile *.py call AddFileHeader4Python()
+autocmd BufNewFile *.mk call AddFileHeader4Script()
+autocmd BufNewFile Makefile call AddFileHeader4Script()
+autocmd BufNewFile *.sh call AddFileHeader4Shell()
 
 " add vimtweak plugin (just for windows)
 " cp vimtweak.dll $VIMRUNTIME
