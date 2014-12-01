@@ -257,14 +257,11 @@ func! TitleDescription(type)
   endif
 endfunction
 
-autocmd BufNewFile *.c call AddFileHeader4C()
-autocmd BufNewFile *.cpp call AddFileHeader4CPP()
-autocmd BufNewFile *.cc call AddFileHeader4CPP()
-autocmd BufNewFile *.hpp call AddFileHeader4CPP()
-autocmd BufNewFile *.py call AddFileHeader4Python()
-autocmd BufNewFile *.mk call AddFileHeader4Script()
-autocmd BufNewFile Makefile call AddFileHeader4Script()
-autocmd BufNewFile *.sh call AddFileHeader4Shell()
+autocmd! BufNewFile *.c call AddFileHeader4C()
+autocmd! BufNewFile *.cpp,*.cc,*.cxx,*.hpp call AddFileHeader4CPP()
+autocmd! BufNewFile *.mk,Makefile call AddFileHeader4Script()
+autocmd! BufNewFile *.py call AddFileHeader4Python()
+autocmd! BufNewFile *.sh call AddFileHeader4Shell()
 
 " add vimtweak plugin (just for windows)
 " cp vimtweak.dll $VIMRUNTIME
