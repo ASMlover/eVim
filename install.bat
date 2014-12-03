@@ -33,10 +33,11 @@ REM POSSIBILITY OF SUCH DAMAGE.
 @set APP_DIR=%cd%
 if not exist "%APP_DIR%" @set APP_DIR=%HOME%\eVim
 if not exist "%APP_DIR%" (
+  echo cloning eVim ...
   call git clone https://github.com/ASMlover/eVim.git "%APP_DIR%" 
 ) else (
   @set ORIGINAL_DIR=%cd%
-  echo updating eVim
+  echo updating eVim ...
   chdir /d "%APP_DIR%"
   call git pull
   chdir /d "%ORIGINAL_DIR%"
@@ -73,8 +74,10 @@ if not exist "%HOME%\.vim\bundle" (
 )
 
 if not exist "%HOME%\.vim\bundle\Vundle.vim" (
+  echo cloning Vundle.vim ...
   call git clone https://github.com/gmarik/Vundle.vim.git "%HOME%\.vim\bundle\Vundle.vim"
 ) else (
+  echo updating Vundle.vim ...
   call cd "%HOME%\.vim\bundle\Vundle.vim"
   call git pull
   call cd %HOME%
@@ -82,4 +85,5 @@ if not exist "%HOME%\.vim\bundle\Vundle.vim" (
 
 call gvim -u "%HOME%\.vim\vimrc.bundles" +PluginInstall +qall
 
+pause
 @echo on
