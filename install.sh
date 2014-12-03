@@ -33,6 +33,7 @@ app_url='https://github.com/ASMlover/eVim.git'
 vundle_url='https://github.com/gmarik/Vundle.vim.git'
 
 upgrade_repo() {
+  echo "updating $1 ..."
   if [ $1 = $app_name ]; then
     cd $app_dir &&
       git pull

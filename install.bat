@@ -85,5 +85,6 @@ if not exist "%HOME%\.vim\bundle\Vundle.vim" (
 
 call gvim -u "%HOME%\.vim\vimrc.bundles" +PluginInstall +qall
 
+echo installing eVim successfully ...
 pause
 @echo on
