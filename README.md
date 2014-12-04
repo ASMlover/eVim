@@ -50,6 +50,9 @@
             \> cd %HOME%\.vim\bundle\vimproc.vim
             \> mingw32_make -f make_mingw64.mak
 
+  * **GVim in Windows**
+    ![GVim in Windows](./res/GVim.png "GVim in Windows")
+
 
 ## **Linux**
   On Linux [Git](http://git-scm.com/), [Clang](http://clang.llvm.org/) and [ag](https://github.com/ggreer/the_silver_searcher) are required. If you haven't already, you will need to install [Vim](http://www.vim.org/).
