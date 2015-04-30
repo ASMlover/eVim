@@ -109,6 +109,7 @@ nnoremap <silent> <F9> :SCCompile<CR>
 nnoremap <silent> <leader>r :SCCompileRun<CR>
 
 " configure for nerdtree-tabs
+" let g:NERDTreeDirArrows=0 " diable this if not support NERDTreeDirArrows
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_open_on_new_tab=1
 
