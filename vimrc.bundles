@@ -76,6 +76,8 @@ Bundle 'osyo-manga/vim-marching'
 Bundle 'Shougo/vimproc.vim'
 " full path fuzzy file, buffer, meu, tag... finder for vim
 Bundle 'kien/ctrlp.vim'
+" a plugin for checking Python code on the fly
+Bundle 'kevinw/pyflakes-vim'
 
 " install local bundles configure if available
 if filereadable(expand("~/.vim/vimrc.bundles.local"))
