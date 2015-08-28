@@ -81,6 +81,7 @@ set ruler                                                    " show where you ar
 set laststatus=2                                             " always show statusline
 set cursorline                                               " show cursor of current line
 set autochdir
+set clipboard=unnamedplus                                    " allow access system clipboard
 
 colorscheme molokai
 set t_Co=256
