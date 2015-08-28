@@ -81,7 +81,7 @@ set ruler                                                    " show where you ar
 set laststatus=2                                             " always show statusline
 set cursorline                                               " show cursor of current line
 set autochdir
-set clipboard=unnamedplus                                    " allow access system clipboard
+" set clipboard=unnamedplus                                    " allow access system clipboard
 
 colorscheme molokai
 set t_Co=256
@@ -108,6 +108,8 @@ nnoremap <silent> <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
 " key-mapping for SingleCompile(compile or run a single source file)
 nnoremap <silent> <F9> :SCCompile<CR>
 nnoremap <silent> <leader>r :SCCompileRun<CR>
+" allow access system clipboard
+nnoremap <silent> <C-S-v> "*p
 
 " configure for nerdtree-tabs
 " let g:NERDTreeDirArrows=0 " diable this if not support NERDTreeDirArrows
