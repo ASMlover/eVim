@@ -11,6 +11,7 @@
   * `,]` brings up [tagbar](https://github.com/majutsushi/tagbar), a sidebar buffer for displaying tags
   * `,p` brings up [ctrlp.vim](https://github.com/kien/ctrlp.vim), a project file filter for easily opening specific files
   * `,r` compile and run a single source file(C/C++)
+  * `,i` display the indention levels with thin vertical lines
   * `F9` compile a single source file(C/C++)
   * `F12` making the GVIM window transparent(just for windows platform)
 
@@ -77,8 +78,7 @@
             $ sudo apt-get install liblua5.2-dev
             $ tar jxvf vim-7.4.tar.bz2
             $ cd vim74
-            $ ./configure --enable-luainterp --enable-pythoninterp \
-            --enable-gui=no --without-x --enable-multibyte
+            $ ./configure --enable-luainterp --enable-pythoninterp --enable-python3interp --enable-gui=no --without-x --enable-multibyte --with-features=huge
             $ make 
             $ sudo make install
 
