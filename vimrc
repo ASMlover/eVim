@@ -82,6 +82,7 @@ set laststatus=2                                             " always show statu
 set cursorline                                               " show cursor of current line
 set autochdir
 " set clipboard=unnamedplus                                    " allow access system clipboard
+set listchars=tab:>-,trail:-                                 " show tab as '>---'
 
 colorscheme molokai
 set t_Co=256
@@ -110,11 +111,19 @@ nnoremap <silent> <F9> :SCCompile<CR>
 nnoremap <silent> <leader>r :SCCompileRun<CR>
 " allow access system clipboard
 nnoremap <silent> <C-S-v> "*p
+" key-mapping for indentLine
+nnoremap <silent> <leader>i :LeadingSpaceToggle<CR>
+" key-mapping for showing tab
+nnoremap <silent> <leader>, :set list!<CR>
 
 " configure for nerdtree-tabs
 " let g:NERDTreeDirArrows=0 " diable this if not support NERDTreeDirArrows
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_open_on_new_tab=1
+
+" configure for indentLine
+let g:indentLine_enabled=0
+let g:indentLine_leadingSpaceChar='.'
 
 " configure for bundles plugins
 if filewritable(expand("~/.vim/bundles.vimrc/configure.vimrc"))

@@ -78,6 +78,10 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'kien/ctrlp.vim'
 " a plugin for checking Python code on the fly
 Bundle 'kevinw/pyflakes-vim'
+" jedi autocompletion
+Bundle 'davidhalter/jedi-vim'
+" display the indention levels with thin vertical lines
+Bundle 'Yggdroot/indentLine'
 
 " install local bundles configure if available
 if filereadable(expand("~/.vim/vimrc.bundles.local"))
