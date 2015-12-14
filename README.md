@@ -1,6 +1,6 @@
 # **eVim**
 ***
-  
+
   **Configure files for Vim**.
 
 
@@ -29,14 +29,14 @@
     - Install [MinGW](http://www.mingw.org/) to `C:\`
     - [Clang](http://www.llvm.org/)
 
-    **Note:** The Vim build may not include the Lua DLL. In that case, [download lua](http://lua-users.org/wiki/LuaBinaries) and put the `lua52.dll` file in the same directory as `gvim.exe`.  
+    **Note:** The Vim build may not include the Lua DLL. In that case, [download lua](http://lua-users.org/wiki/LuaBinaries) and put the `lua52.dll` file in the same directory as `gvim.exe`.
     **Note:** After installing Vim, you need to add it to your environment variable path. Just like:
 
         \> echo %VIMRUNTIME%
         \> D:\Vim\vim74
 
   * **Installing eVim**
-    
+
         \> git clone https://github.com/ASMlover/eVim.git
         \> install.bat
 
@@ -79,11 +79,11 @@
             $ tar jxvf vim-7.4.tar.bz2
             $ cd vim74
             $ ./configure --enable-luainterp --enable-pythoninterp --enable-python3interp --enable-gui=no --without-x --enable-multibyte --with-features=huge
-            $ make 
+            $ make
             $ sudo make install
 
   * **Installing eVim**
-    
+
         $ git clone https://github.com/ASMlover/eVim.git
         $ ./install.sh install
 
@@ -91,6 +91,6 @@
 
         $ cd ~/.vim/bundle/vimproc.vim
         $ make
-  
+
   * **Vim in Linux**
     ![Vim in Linux](./res/Vim.png "Vim in Ubuntu")

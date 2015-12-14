@@ -25,7 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" configure for vim-marching 
+" configure for vim-marching
 " this plugin needs vimproc.vim
 let g:marching_clang_command = "clang"
 let g:marching#clang_command#options = {
@@ -41,7 +41,7 @@ else
   let g:marching_include_paths = filter(
     \ split(glob("/usr/include/*"), "\n") +
     \ split(glob("/usr/include/c++/4.8.1/*"), "\n") +
-    \ split(glob("/usr/include/*/"), "\n"), 
+    \ split(glob("/usr/include/*/"), "\n"),
     \ "isdirectory(v:val)")
 endif
 let g:marching_enable_neocomplete = 1

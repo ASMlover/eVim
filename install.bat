@@ -34,7 +34,7 @@ REM POSSIBILITY OF SUCH DAMAGE.
 if not exist "%APP_DIR%" @set APP_DIR=%HOME%\eVim
 if not exist "%APP_DIR%" (
   echo cloning eVim ...
-  call git clone https://github.com/ASMlover/eVim.git "%APP_DIR%" 
+  call git clone https://github.com/ASMlover/eVim.git "%APP_DIR%"
 ) else (
   @set ORIGINAL_DIR=%cd%
   echo updating eVim ...

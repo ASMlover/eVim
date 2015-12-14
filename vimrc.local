@@ -232,7 +232,7 @@ func! AddFileHeader4Shell()
   echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
 endfunction
 
-" 0: default/C 
+" 0: default/C
 " 1: cpp
 " 2: Script
 func! TitleDescription(type)
@@ -245,7 +245,7 @@ func! TitleDescription(type)
       endif
       let n = n + 1
   endwhile
-  
+
   if a:type == 0
     call AddFileHeader4C()
   elseif a:type == 1
@@ -276,3 +276,6 @@ augroup filetype
   " Markdown
   au! BufNewFile,BufRead *.md,*.mkd,*.mkdn,*.mdwn,*.mdown,*.markdown   setf markdown
 augroup end
+
+" automatically removing all trailing whitespace
+autocmd! BufWritePre * :%s/\s\+$//e

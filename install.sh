@@ -72,11 +72,11 @@ create_vimrc() {
     mkdir -p $HOME/.vim/bundle
   fi
 
-  cp $app_dir/vimrc $HOME/.vimrc 
+  cp $app_dir/vimrc $HOME/.vimrc
   cp $app_dir/vimrc.bundles $HOME/.vim/
-  cp $app_dir/vimrc.bundles.local $HOME/.vim/ 
-  cp $app_dir/vimrc.local $HOME/.vim/ 
-  cp -R $app_dir/bundles.vimrc $HOME/.vim/ 
+  cp $app_dir/vimrc.bundles.local $HOME/.vim/
+  cp $app_dir/vimrc.local $HOME/.vim/
+  cp -R $app_dir/bundles.vimrc $HOME/.vim/
   cp -R $app_dir/syntax $HOME/.vim/
 }
 

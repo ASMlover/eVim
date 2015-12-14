@@ -123,6 +123,7 @@ let g:nerdtree_tabs_open_on_new_tab=1
 
 " configure for indentLine
 let g:indentLine_enabled=0
+let g:indentLine_char='.'
 let g:indentLine_leadingSpaceChar='.'
 
 " configure for bundles plugins
