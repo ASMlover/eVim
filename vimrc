@@ -84,7 +84,8 @@ set autochdir
 " set clipboard=unnamedplus                                    " allow access system clipboard
 set listchars=tab:>-,trail:-                                 " show tab as '>---'
 
-colorscheme molokai
+" colorscheme molokai
+colorscheme solarized
 set t_Co=256
 set background=dark
 set guifont=Consolas:h11
@@ -125,6 +126,12 @@ let g:nerdtree_tabs_open_on_new_tab=1
 let g:indentLine_enabled=0
 let g:indentLine_char='.'
 let g:indentLine_leadingSpaceChar='.'
+
+" configure for airline
+let g:airline_section_y='BN: %{bufnr("%")}'
+let g:airline_extensions=["branch", "tabline"]
+let g:airline#extensions#tabline#tab_nr_type=1
+
 
 " configure for bundles plugins
 if filewritable(expand("~/.vim/bundles.vimrc/configure.vimrc"))
