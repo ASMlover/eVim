@@ -57,7 +57,7 @@ Bundle 'gmarik/Vundle.vim'
 " molokai color scheme for vim
 Bundle 'ASMlover/molokai'
 " solarized color scheme for vim
-Bundle 'altercation/vim-colors-solarized'
+Bundle 'ASMlover/vim-colors-solarized'
 " help folks to align text, etc
 Bundle 'vim-scripts/Align'
 " use ag(the_silver_searcher, better than ack, which is better than grep)
