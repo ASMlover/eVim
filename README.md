@@ -12,6 +12,7 @@
   * `,p` brings up [ctrlp.vim](https://github.com/kien/ctrlp.vim), a project file filter for easily opening specific files
   * `,r` compile and run a single source file(C/C++)
   * `,i` display the indention levels with thin vertical lines
+  * `,,` display the whitespace(tab or space)
   * `F9` compile a single source file(C/C++)
   * `F12` making the GVIM window transparent(just for windows platform)
 
