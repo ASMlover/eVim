@@ -86,10 +86,13 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'Yggdroot/indentLine'
 " git commands in vim
 Bundle 'tpope/vim-fugitive'
-" status/tabline for vim
+" smart status airline for vim
 Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
 " configure tabe within vim
 Bundle 'mkitt/tabline.vim'
+" show the list of buffers in the command bar for vim
+Bundle 'bling/vim-bufferline'
 
 " install local bundles configure if available
 if filereadable(expand("~/.vim/vimrc.bundles.local"))

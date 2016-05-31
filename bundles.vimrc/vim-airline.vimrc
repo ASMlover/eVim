@@ -1,4 +1,4 @@
-" Copyright (c) 2014 ASMlover. All rights reserved.
+" Copyright (c) 2016 ASMlover. All rights reserved.
 "
 " Redistribution and use in source and binary forms, with or without
 " modification, are permitted provided that the following conditions
@@ -25,15 +25,27 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" neocomplete configure
-if filereadable(expand("~/.vim/bundles.vimrc/neocomplete.vimrc"))
-  source ~/.vim/bundles.vimrc/neocomplete.vimrc
-endif
-" vim-marching configure
-if filereadable(expand("~/.vim/bundles.vimrc/vim-marching.vimrc"))
-  source ~/.vim/bundles.vimrc/vim-marching.vimrc
-endif
-" vim-airline configure
-if filereadable(expand("~/.vim/bundles.vimrc/vim-airline.vimrc"))
-  source ~/.vim/bundles.vimrc/vim-airline.vimrc
-endif
+let g:airline_theme='luna'
+let g:airline_section_y='BN: %{bufnr("%")}'
+let g:airline_extensions=['branch', 'tabline']
+let g:airline#extensions#branch#format='CustomBranchName'
+function! CustomBranchName(name)
+  return '('. a:name . ')'
+endfunction
+let g:airline#extensions#bufferline#enabled=1
+let g:airline#extensions#bufferline#overwrite_variables=1
+let g:airline#extensions#tabline#tab_nr_type=2
+let g:airline#extensions#tabline#switch_buffers_and_tabs=1
+let g:airline#extensions#tabline#buffer_idx_mode=1
+nmap <silent> <leader>1 <Plug>AirlineSelectTab1
+nmap <silent> <leader>2 <Plug>AirlineSelectTab2
+nmap <silent> <leader>3 <Plug>AirlineSelectTab3
+nmap <silent> <leader>4 <Plug>AirlineSelectTab4
+nmap <silent> <leader>5 <Plug>AirlineSelectTab5
+nmap <silent> <leader>6 <Plug>AirlineSelectTab6
+nmap <silent> <leader>7 <Plug>AirlineSelectTab7
+nmap <silent> <leader>8 <Plug>AirlineSelectTab8
+nmap <silent> <leader>9 <Plug>AirlineSelectTab9
+nmap <silent> <leader>+ <Plug>AirlineSelectNextTab
+nmap <silent> <leader>- <Plug>AirlineSelectPrevTab
+

@@ -127,11 +127,6 @@ let g:indentLine_enabled=0
 let g:indentLine_char='.'
 let g:indentLine_leadingSpaceChar='.'
 
-" configure for airline
-let g:airline_section_y='BN: %{bufnr("%")}'
-let g:airline_extensions=["branch", "tabline"]
-let g:airline#extensions#tabline#tab_nr_type=1
-
 " configure for bundles plugins
 if filewritable(expand("~/.vim/bundles.vimrc/configure.vimrc"))
   source ~/.vim/bundles.vimrc/configure.vimrc
