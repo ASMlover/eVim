@@ -95,15 +95,15 @@ set autochdir
 " set clipboard=unnamedplus                                    " allow access system clipboard
 set listchars=tab:>-,trail:-                                 " show tab as '>---'
 
-" colorscheme molokai
-colorscheme solarized
 set t_Co=256
 set background=dark
 set guifont=Consolas:h11
 if WINDOWS()
+  colorscheme solarized
   au GUIEnter * simalt ~x
 else
   let g:solarized_termcolors=256
+  colorscheme molokai
 endif
 
 " remember the location of last time shut off
