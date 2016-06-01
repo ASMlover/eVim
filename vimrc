@@ -122,6 +122,8 @@ nnoremap <silent> <leader>d :NERDTreeToggle<CR>
 nnoremap <silent> <leader>j :NERDTreeFind<CR>
 nnoremap <silent> <leader>] :TagbarToggle<CR>
 if g:plugin_ctrlp_enabled
+  nnoremap <silent> <leader>f :CtrlP<CR>
+  nnoremap <silent> <leader>b :CtrlPBuffer<CR>
   nnoremap <silent> <leader>p :CtrlP<CR>
   nnoremap <silent> <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
 endif
