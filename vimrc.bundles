@@ -73,7 +73,20 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 " a plugin that displays tags in a window
 Bundle 'majutsushi/tagbar'
-if g:using_full_vimrc
+" display the indention levels with thin vertical lines
+Bundle 'Yggdroot/indentLine'
+" git commands in vim
+Bundle 'tpope/vim-fugitive'
+" rename the current file in the vim buffer and retain relative path
+Bundle 'danro/rename.vim'
+" smart status airline for vim
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+" configure tabe within vim
+Bundle 'mkitt/tabline.vim'
+" show the list of buffers in the command bar for vim
+Bundle 'bling/vim-bufferline'
+if g:using_matching_vimrc
   " a plugin marking it more convenient to compile or run a single source file
   Bundle 'xuhdev/SingleCompile'
   " next generation completion framework after neocomplcache
@@ -83,27 +96,22 @@ if g:using_full_vimrc
   " interactive command execution in vim
   Bundle 'Shougo/vimproc.vim'
 endif
-" full path fuzzy file, buffer, meu, tag... finder for vim
-" Bundle 'kien/ctrlp.vim'
-" quickly locate files, buffers, mrus in large project
-Bundle 'Yggdroot/LeaderF'
-" a plugin for checking Python code on the fly
-Bundle 'kevinw/pyflakes-vim'
-" jedi autocompletion
-Bundle 'davidhalter/jedi-vim'
-" display the indention levels with thin vertical lines
-Bundle 'Yggdroot/indentLine'
-" git commands in vim
-Bundle 'tpope/vim-fugitive'
-" smart status airline for vim
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
-" configure tabe within vim
-Bundle 'mkitt/tabline.vim'
-" show the list of buffers in the command bar for vim
-Bundle 'bling/vim-bufferline'
-" rename the current file in the vim buffer and retain relative path
-Bundle 'danro/rename.vim'
+if g:plugin_ctrlp_enabled
+  " full path fuzzy file, buffer, meu, tag... finder for vim
+  Bundle 'kien/ctrlp.vim'
+endif
+if g:plugin_leaderf_enabled
+  " quickly locate files, buffers, mrus in large project
+  Bundle 'Yggdroot/LeaderF'
+endif
+if g:plugin_pyflakes_enabled
+  " a plugin for checking Python code on the fly
+  Bundle 'kevinw/pyflakes-vim'
+endif
+if g:plugin_jedi_enabled
+  " jedi autocompletion
+  Bundle 'davidhalter/jedi-vim'
+endif
 
 " install local bundles configure if available
 if filereadable(expand("~/.vim/vimrc.bundles.local"))

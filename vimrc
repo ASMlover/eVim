@@ -121,13 +121,17 @@ nnoremap <silent> <leader>d :NERDTreeToggle<CR>
 " jump to current file in the NERD tree
 nnoremap <silent> <leader>j :NERDTreeFind<CR>
 nnoremap <silent> <leader>] :TagbarToggle<CR>
-" `,f` launch LeaderF to search files
-" `,b` launch LeaderF to search buffers
-" `,p` the same as `,f`
-nnoremap <silent> <leader>p :Leaderf<CR>
-" nnoremap <silent> <leader>p :CtrlP<CR>
-" nnoremap <silent> <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
-if g:using_full_vimrc
+if g:plugin_ctrlp_enabled
+  nnoremap <silent> <leader>p :CtrlP<CR>
+  nnoremap <silent> <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
+endif
+if g:plugin_leaderf_enabled
+  " `,f` launch LeaderF to search files
+  " `,b` launch LeaderF to search buffers
+  " `,p` the same as `,f`
+  nnoremap <silent> <leader>p :Leaderf<CR>
+endif
+if g:using_matching_vimrc
   " key-mapping for SingleCompile(compile or run a single source file)
   nnoremap <silent> <F9> :SCCompile<CR>
   nnoremap <silent> <leader>r :SCCompileRun<CR>
