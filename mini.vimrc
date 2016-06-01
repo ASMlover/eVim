@@ -1,4 +1,4 @@
-" Copyright (c) 2014 ASMlover. All rights reserved.
+" Copyright (c) 2016 ASMlover. All rights reserved.
 "
 " Redistribution and use in source and binary forms, with or without
 " modification, are permitted provided that the following conditions
@@ -91,6 +91,8 @@ set background=dark
 set guifont=Consolas:h11
 if WINDOWS()
   au GUIEnter * simalt ~x
+else
+  let g:solarized_termcolors=256
 endif
 
 " remember the location of last time shut off
@@ -113,11 +115,6 @@ nnoremap <silent> <leader>] :TagbarToggle<CR>
 nnoremap <silent> <leader>p :Leaderf<CR>
 " nnoremap <silent> <leader>p :CtrlP<CR>
 " nnoremap <silent> <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
-" key-mapping for SingleCompile(compile or run a single source file)
-nnoremap <silent> <F9> :SCCompile<CR>
-nnoremap <silent> <leader>r :SCCompileRun<CR>
-" allow access system clipboard
-nnoremap <silent> <C-S-v> "*p
 " key-mapping for indentLine
 nnoremap <silent> <leader>i :LeadingSpaceToggle<CR>
 " key-mapping for showing tab

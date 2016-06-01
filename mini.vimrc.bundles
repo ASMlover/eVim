@@ -1,4 +1,4 @@
-" Copyright (c) 2014 ASMlover. All rights reserved.
+" Copyright (c) 2016 ASMlover. All rights reserved.
 "
 " Redistribution and use in source and binary forms, with or without
 " modification, are permitted provided that the following conditions
@@ -68,16 +68,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 " a plugin that displays tags in a window
 Bundle 'majutsushi/tagbar'
-" a plugin marking it more convenient to compile or run a single source file
-Bundle 'xuhdev/SingleCompile'
-" next generation completion framework after neocomplcache
-Bundle 'Shougo/neocomplete.vim'
-" async clang code completion
-Bundle 'osyo-manga/vim-marching'
-" interactive command execution in vim
-Bundle 'Shougo/vimproc.vim'
-" full path fuzzy file, buffer, meu, tag... finder for vim
-" Bundle 'kien/ctrlp.vim'
 " quickly locate files, buffers, mrus in large project
 Bundle 'Yggdroot/LeaderF'
 " a plugin for checking Python code on the fly
