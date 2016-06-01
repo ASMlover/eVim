@@ -25,7 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-let g:airline_theme='luna'
+let g:airline_theme='xtermlight'
 let g:airline_section_y='BN: %{bufnr("%")}'
 let g:airline_extensions=['branch', 'tabline']
 let g:airline#extensions#branch#format='CustomBranchName'
