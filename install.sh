@@ -74,6 +74,7 @@ create_vimrc() {
 
   cp $app_dir/vimrc $HOME/.vimrc
   cp $app_dir/vimrc.bundles $HOME/.vim/
+  cp $app_dir/vimrc.conf $HOME/.vim/
   cp $app_dir/vimrc.bundles.local $HOME/.vim/
   cp $app_dir/vimrc.local $HOME/.vim/
   cp -R $app_dir/bundles.vimrc $HOME/.vim/

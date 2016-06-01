@@ -25,9 +25,6 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-let g:using_tab_indent=0
-let g:using_full_vimrc=1
-
 " do not bother with vi compatibility
 set nocompatible                                             " must be first line
 
@@ -50,6 +47,11 @@ endif
 " synchronization across (heterogeneous) system easier
 if WINDOWS()
   set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
+endif
+
+" read configure
+if filereadable(expand("~/.vim/conf.vimrc"))
+  source ~/.vim/conf.vimrc
 endif
 
 " install vundle bundles
