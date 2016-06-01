@@ -103,7 +103,8 @@ if WINDOWS()
   au GUIEnter * simalt ~x
 else
   let g:solarized_termcolors=256
-  colorscheme molokai
+  " colorscheme molokai
+  colorscheme solarized
 endif
 
 " remember the location of last time shut off
