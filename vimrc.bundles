@@ -93,6 +93,10 @@ Bundle 'vim-airline/vim-airline-themes'
 Bundle 'mkitt/tabline.vim'
 " show the list of buffers in the command bar for vim
 Bundle 'bling/vim-bufferline'
+" rename the current file in the vim buffer and retain relative path
+Bundle 'danro/rename.vim'
+" quickly locate files, buffers, mrus in large project
+Bundle 'Yggdroot/LeaderF'
 
 " install local bundles configure if available
 if filereadable(expand("~/.vim/vimrc.bundles.local"))
