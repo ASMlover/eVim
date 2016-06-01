@@ -26,7 +26,7 @@
 " POSSIBILITY OF SUCH DAMAGE.
 
 let g:airline_theme='xtermlight'
-let g:airline_section_y='BN: %{bufnr("%")}'
+let g:airline_section_y=airline#section#create(['ffenc', ' < ', 'BN: %{bufnr("%")}'])
 let g:airline_extensions=['branch', 'tabline']
 let g:airline#extensions#branch#format='CustomBranchName'
 func! CustomBranchName(name)
