@@ -29,7 +29,7 @@ let g:airline_theme='luna'
 let g:airline_section_y='BN: %{bufnr("%")}'
 let g:airline_extensions=['branch', 'tabline']
 let g:airline#extensions#branch#format='CustomBranchName'
-function! CustomBranchName(name)
+func! CustomBranchName(name)
   return '('. a:name . ')'
 endfunction
 let g:airline#extensions#bufferline#enabled=1
