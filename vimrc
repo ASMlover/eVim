@@ -25,6 +25,9 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
+let g:using_tab_indent=0
+let g:using_full_vimrc=1
+
 " do not bother with vi compatibility
 set nocompatible                                             " must be first line
 
@@ -63,10 +66,16 @@ set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
 set showcmd
-set expandtab                                                " expand tabs to space
-set tabstop=8                                                " actual tabs occupy 8 characters
-set shiftwidth=2                                             " normal mode indentation commands use 4 spaces
-set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
+if g:using_tab_indent
+  set tabstop=4                                              " actual tabs occupy 8 characters
+  set shiftwidth=4                                           " normal mode indentation commands use 4 spaces
+  set softtabstop=4                                          " insert mode tab and backspace use 2 spaces
+else
+  set expandtab                                              " expand tabs to space
+  set tabstop=8                                              " actual tabs occupy 8 characters
+  set shiftwidth=2                                           " normal mode indentation commands use 4 spaces
+  set softtabstop=2                                          " insert mode tab and backspace use 2 spaces
+endif
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " search as you type
 set smartcase                                                " case-sensitive search if any caps
@@ -91,6 +100,8 @@ set background=dark
 set guifont=Consolas:h11
 if WINDOWS()
   au GUIEnter * simalt ~x
+else
+  let g:solarized_termcolors=256
 endif
 
 " remember the location of last time shut off
@@ -113,11 +124,15 @@ nnoremap <silent> <leader>] :TagbarToggle<CR>
 nnoremap <silent> <leader>p :Leaderf<CR>
 " nnoremap <silent> <leader>p :CtrlP<CR>
 " nnoremap <silent> <leader>P :CtrlPClearCache<CR>:CtrlP<CR>
-" key-mapping for SingleCompile(compile or run a single source file)
-nnoremap <silent> <F9> :SCCompile<CR>
-nnoremap <silent> <leader>r :SCCompileRun<CR>
-" allow access system clipboard
-nnoremap <silent> <C-S-v> "*p
+if g:using_full_vimrc
+  " key-mapping for SingleCompile(compile or run a single source file)
+  nnoremap <silent> <F9> :SCCompile<CR>
+  nnoremap <silent> <leader>r :SCCompileRun<CR>
+  if WINDOWS()
+    " allow access system clipboard
+    nnoremap <silent> <C-S-v> "*p
+  endif
+endif
 " key-mapping for indentLine
 nnoremap <silent> <leader>i :LeadingSpaceToggle<CR>
 " key-mapping for showing tab

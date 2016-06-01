@@ -25,13 +25,15 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" neocomplete configure
-if filereadable(expand("~/.vim/bundles.vimrc/neocomplete.vimrc"))
-  source ~/.vim/bundles.vimrc/neocomplete.vimrc
-endif
-" vim-marching configure
-if filereadable(expand("~/.vim/bundles.vimrc/vim-marching.vimrc"))
-  source ~/.vim/bundles.vimrc/vim-marching.vimrc
+if g:using_full_vimrc
+  " neocomplete configure
+  if filereadable(expand("~/.vim/bundles.vimrc/neocomplete.vimrc"))
+    source ~/.vim/bundles.vimrc/neocomplete.vimrc
+  endif
+  " vim-marching configure
+  if filereadable(expand("~/.vim/bundles.vimrc/vim-marching.vimrc"))
+    source ~/.vim/bundles.vimrc/vim-marching.vimrc
+  endif
 endif
 " vim-airline configure
 if filereadable(expand("~/.vim/bundles.vimrc/vim-airline.vimrc"))

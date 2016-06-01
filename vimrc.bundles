@@ -68,14 +68,16 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 " a plugin that displays tags in a window
 Bundle 'majutsushi/tagbar'
-" a plugin marking it more convenient to compile or run a single source file
-Bundle 'xuhdev/SingleCompile'
-" next generation completion framework after neocomplcache
-Bundle 'Shougo/neocomplete.vim'
-" async clang code completion
-Bundle 'osyo-manga/vim-marching'
-" interactive command execution in vim
-Bundle 'Shougo/vimproc.vim'
+if g:using_full_vimrc
+  " a plugin marking it more convenient to compile or run a single source file
+  Bundle 'xuhdev/SingleCompile'
+  " next generation completion framework after neocomplcache
+  Bundle 'Shougo/neocomplete.vim'
+  " async clang code completion
+  Bundle 'osyo-manga/vim-marching'
+  " interactive command execution in vim
+  Bundle 'Shougo/vimproc.vim'
+endif
 " full path fuzzy file, buffer, meu, tag... finder for vim
 " Bundle 'kien/ctrlp.vim'
 " quickly locate files, buffers, mrus in large project
