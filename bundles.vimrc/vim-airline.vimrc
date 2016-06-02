@@ -32,10 +32,7 @@ let g:airline#extensions#branch#format='CustomBranchName'
 func! CustomBranchName(name)
   return '('. a:name . ')'
 endfunction
-let g:airline#extensions#bufferline#enabled=1
-let g:airline#extensions#bufferline#overwrite_variables=1
-let g:airline#extensions#tabline#tab_nr_type=2
-let g:airline#extensions#tabline#switch_buffers_and_tabs=1
+let g:airline#extensions#tabline#tab_nr_type=1
 let g:airline#extensions#tabline#buffer_idx_mode=1
 nmap <silent> <leader>1 <Plug>AirlineSelectTab1
 nmap <silent> <leader>2 <Plug>AirlineSelectTab2
@@ -48,4 +45,3 @@ nmap <silent> <leader>8 <Plug>AirlineSelectTab8
 nmap <silent> <leader>9 <Plug>AirlineSelectTab9
 nmap <silent> <leader>+ <Plug>AirlineSelectNextTab
 nmap <silent> <leader>- <Plug>AirlineSelectPrevTab
-
