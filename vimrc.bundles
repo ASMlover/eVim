@@ -80,7 +80,7 @@ Bundle 'tpope/vim-fugitive'
 " rename the current file in the vim buffer and retain relative path
 Bundle 'danro/rename.vim'
 " smart status airline for vim
-Bundle 'vim-airline/vim-airline'
+Bundle 'ASMlover/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
 if g:using_matching_vimrc
   " a plugin marking it more convenient to compile or run a single source file
