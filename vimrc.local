@@ -38,7 +38,6 @@ if WINDOWS()
     \endif<CR>
 endif
 
-
 " auto pair complete
 func! ClosePair(char)
   if getline('.')[col('.') - 1] == a:char
@@ -276,6 +275,11 @@ augroup filetype
   " Markdown
   au! BufNewFile,BufRead *.md,*.mkd,*.mkdn,*.mdwn,*.mdown,*.markdown   setf markdown
 augroup end
+
+  " remember the location of last time shut off
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
 
 " automatically removing all trailing whitespace
 autocmd! BufWritePre * :%s/\s\+$//e

@@ -73,8 +73,9 @@ create_vimrc() {
   fi
 
   cp $app_dir/vimrc $HOME/.vimrc
-  cp $app_dir/vimrc.bundles $HOME/.vim/
+  cp $app_dir/vimrc.init $HOME/.vim/
   cp $app_dir/vimrc.conf $HOME/.vim/
+  cp $app_dir/vimrc.bundles $HOME/.vim/
   cp $app_dir/vimrc.bundles.local $HOME/.vim/
   cp $app_dir/vimrc.local $HOME/.vim/
   cp -R $app_dir/bundles.vimrc $HOME/.vim/
@@ -83,7 +84,7 @@ create_vimrc() {
 
 setup_vundle() {
   echo "setting vundles for vim ..."
-  vim -u $HOME/.vim/vimrc.bundles +PluginInstall +qall
+  vim -u $HOME/.vim/vimrc.init +PluginInstall +qall
 }
 
 do_install() {

@@ -25,58 +25,23 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" do not bother with vi compatibility
-set nocompatible                                             " must be first line
-
-" configure vim
-silent func! OSX()
-  return has("macunix")
-endfunction
-silent func! LINUX()
-  return (has("unix") && !has("macunix") && !has("win32unix"))
-endfunction
-silent func! WINDOWS()
-  return (has("win32") || has("win64"))
-endfunction
-
-if !WINDOWS()
-  set shell=/bin/sh
+if filereadable(expand("~/.vim/vimrc.init"))
+  source ~/.vim/vimrc.init
 endif
-
-" on windows, we alse use '.vim' instead of 'vimfiles'; this make
-" synchronization across (heterogeneous) system easier
-if WINDOWS()
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
-endif
-
-" read configure
-if filereadable(expand("~/.vim/vimrc.conf"))
-  source ~/.vim/vimrc.conf
-endif
-
-" install vundle bundles
-if filereadable(expand("~/.vim/vimrc.bundles"))
-  source ~/.vim/vimrc.bundles
-endif
-
-" ensure ftdetect et al work by including this after the Vundle stuff
-filetype plugin indent on
-" enable syntax highlighting
-syntax on
 
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
 set showcmd
 if g:using_tab_indent
-  set noexpandtab
-  set tabstop=4                                              " actual tabs occupy 8 characters
+  set noexpandtab                                            " do not expand tab to space
+  set tabstop=4                                              " actual tabs occupy 4 characters
   set shiftwidth=4                                           " normal mode indentation commands use 4 spaces
-  set softtabstop=4                                          " insert mode tab and backspace use 2 spaces
+  set softtabstop=4                                          " insert mode tab and backspace use 4 spaces
 else
   set expandtab                                              " expand tabs to space
   set tabstop=8                                              " actual tabs occupy 8 characters
-  set shiftwidth=2                                           " normal mode indentation commands use 4 spaces
+  set shiftwidth=2                                           " normal mode indentation commands use 2 spaces
   set softtabstop=2                                          " insert mode tab and backspace use 2 spaces
 endif
 set ignorecase                                               " case-insensitive search
@@ -92,12 +57,11 @@ set number                                                   " show line numbers
 set ruler                                                    " show where you are
 set laststatus=2                                             " always show statusline
 set cursorline                                               " show cursor of current line
-set autochdir
+set autochdir                                                " auto change the current working directory while opening file
 " set clipboard=unnamedplus                                    " allow access system clipboard
 set listchars=tab:>-,trail:-                                 " show tab as '>---'
-
-set t_Co=256
-set background=dark
+set t_Co=256                                                 " set number of colors
+set background=dark                                          " set {color} for the background
 set guifont=Consolas:h11
 if WINDOWS()
   colorscheme solarized
@@ -106,11 +70,6 @@ else
   let g:solarized_termcolors=256
   " colorscheme molokai
   colorscheme solarized
-endif
-
-" remember the location of last time shut off
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 " keyboard shortcuts

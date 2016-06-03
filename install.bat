@@ -50,8 +50,9 @@ if not exist "%HOME%\.vim" (
 
 REM copy configure of vim
 call copy /Y vimrc "%HOME%\_vimrc"
-call copy /Y vimrc.bundles "%HOME%\.vim\"
 call copy /Y vimrc.conf "%HOME%\.vim"
+call copy /Y vimrc.init "%HOME%\.vim"
+call copy /Y vimrc.bundles "%HOME%\.vim\"
 call copy /Y vimrc.bundles.local "%HOME%\.vim\"
 call copy /Y vimrc.local "%HOME%\.vim\"
 if not exist "%HOME%\.vim\bundles.vimrc" (
@@ -84,7 +85,8 @@ if not exist "%HOME%\.vim\bundle\Vundle.vim" (
   call cd %HOME%
 )
 
-call gvim -u "%HOME%\.vim\vimrc.bundles" +PluginInstall +qall
+REM call gvim -u "%HOME%\.vim\vimrc.bundles" +PluginInstall +qall
+call gvim -u "%HOME%\.vim\vimrc.init" +PluginInstall +qall
 
 echo installing eVim successfully ...
 pause

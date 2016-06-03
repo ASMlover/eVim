@@ -25,33 +25,12 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" do not bother with vi compatibility
-set nocompatible                                             " must be first line
-
-silent func! WINDOWS()
-  return (has("win32") || has("win64"))
-endfunction
-
-" on windows, we also use '.vim' instead of 'vimfiles'; this makes
-" synchronization across (heterogeneous) system easier
-if WINDOWS()
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
-end
-
-" enable syntax highlighting
-syntax on
-
 " configure Vundle
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim/
+set runtimepath+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
-
-" read configure
-if filereadable(expand("~/.vim/vimrc.conf"))
-  source ~/.vim/vimrc.conf
-endif
 
 " bundles here are part of the core setup.
 " DO NOT add bundles to this list, as they might get removed when you upgrade.
