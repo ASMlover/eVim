@@ -50,8 +50,8 @@ if WINDOWS()
 endif
 
 " read configure
-if filereadable(expand("~/.vim/conf.vimrc"))
-  source ~/.vim/conf.vimrc
+if filereadable(expand("~/.vim/vimrc.conf"))
+  source ~/.vim/vimrc.conf
 endif
 
 " install vundle bundles
@@ -69,6 +69,7 @@ set autoread                                                 " reload files when
 set backspace=2                                              " Fix broken backspace in some setups
 set showcmd
 if g:using_tab_indent
+  set noexpandtab
   set tabstop=4                                              " actual tabs occupy 8 characters
   set shiftwidth=4                                           " normal mode indentation commands use 4 spaces
   set softtabstop=4                                          " insert mode tab and backspace use 2 spaces
