@@ -158,6 +158,9 @@ let g:indentLine_enabled=0
 let g:indentLine_char='.'
 let g:indentLine_leadingSpaceChar='.'
 
+" configure for spell bad colors
+hi SpellBad ctermbg=52
+
 " configure for bundles plugins
 if filewritable(expand("~/.vim/bundles.vimrc/configure.vimrc"))
   source ~/.vim/bundles.vimrc/configure.vimrc
