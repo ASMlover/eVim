@@ -56,7 +56,8 @@
             \> mingw32_make -f make_mingw64.mak
 
   * **Installing powerline-fonts**
-    Copy powerline fonts from ./extra/powerline-fonts into your system fonts directory.
+
+    Copy powerline fonts from .\extra\powerline-fonts into your system fonts directory.
 
           \> copy /Y .\extra\powerline-fonts\*.* C:\Windows\Fonts
 
