@@ -56,7 +56,7 @@
             \> mingw32_make -f make_mingw64.mak
 
   * **GVim in Windows**
-    ![GVim in Windows](./res/GVim.png "GVim in Windows")
+    ![GVim in Windows](./res/vim.windows.png "GVim in Windows")
 
 
 ## **Linux**
@@ -97,4 +97,22 @@
         $ make
 
   * **Vim in Linux**
-    ![Vim in Linux](./res/Vim.png "Vim in Ubuntu")
+    ![Vim in Linux](./res/vim.linux.png "Vim in Linux")
+
+
+## **OSX**
+  See the document of the Linux part.
+
+  * **Install vim7.4**
+    - Append `#include <AvailabilityMacros.h>` into `os_unix.h`
+    - Compiling vim7.4
+
+            $ xcode-select --install
+            $ tar jxvf vim-7.4.tar.bz2
+            $ cd vim74
+            $ ./configure --enable-luainterp --enable-pythoninterp=yes --enable-gui=no --without-x --enable-multibyte --with-features=huge --enable-cscope --enable-fontset --enable-perlinterp --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config
+            $ make
+            $ sudo make install
+
+  * **Vim in OSX**
+    ![Vim in OSX](./res/vim.darwin.png "Vim in OSX")
