@@ -119,7 +119,7 @@
             $ make
             $ sudo make install
 
-  * **Install powerline**
+  * **Installing powerline-fonts**
 
         $ git clone https://github.com/powerline/fonts.git
         $ cd fonts
