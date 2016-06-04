@@ -55,6 +55,11 @@
             \> cd %HOME%\.vim\bundle\vimproc.vim
             \> mingw32_make -f make_mingw64.mak
 
+  * **Installing powerline-fonts**
+    Copy powerline fonts from ./extra/powerline-fonts into your system fonts directory.
+
+          \> copy /Y .\extra\powerline-fonts\*.* C:\Windows\Fonts
+
   * **GVim in Windows**
     ![GVim in Windows](./res/vim.windows.png "GVim in Windows")
 
@@ -113,6 +118,12 @@
             $ ./configure --enable-luainterp --enable-pythoninterp=yes --enable-gui=no --without-x --enable-multibyte --with-features=huge --enable-cscope --enable-fontset --enable-perlinterp --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config
             $ make
             $ sudo make install
+
+  * **Install powerline**
+
+        $ git clone https://github.com/powerline/fonts.git
+        $ cd fonts
+        $ ./install.sh
 
   * **Vim in OSX**
     ![Vim in OSX](./res/vim.darwin.png "Vim in OSX")
