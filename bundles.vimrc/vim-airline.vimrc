@@ -25,8 +25,11 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
+if DARWIN()
+  let g:airline_powerline_fonts=1
+endif
 let g:airline_theme='xtermlight'
-let g:airline_section_y=airline#section#create(['ffenc', ' < ', 'BN: %{bufnr("%")}'])
+let g:airline_section_y=airline#section#create(['ffenc', '[BN:%{bufnr("%")}]'])
 let g:airline_extensions=['branch', 'tabline']
 let g:airline#extensions#branch#format='CustomBranchName'
 func! CustomBranchName(name)
