@@ -47,6 +47,7 @@ endif
 set ignorecase                                               " case-insensitive search
 set incsearch                                                " search as you type
 set smartcase                                                " case-sensitive search if any caps
+set encoding=utf-8                                           " character encoding used in vim is utf-8
 set fileencoding=utf-8                                       " default fileencoding is utf-8
 set fileencodings=utf-8,ucs-bom,default,latin1
 set fileformat=unix                                          " default fileformat is unix
@@ -66,6 +67,12 @@ set guifont=Consolas:h11
 if WINDOWS()
   colorscheme solarized
   au GUIEnter * simalt ~x
+
+  " fixed the utf-8 display error for windows
+  set fileencoding=chinese
+  source $VIMRUNTIME/delmenu.vim
+  source $VIMRUNTIME/menu.vim
+  language messages zh_CN.utf-8
 else
   let g:solarized_termcolors=256
   " colorscheme molokai
