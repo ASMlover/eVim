@@ -50,7 +50,7 @@ if filereadable(expand("~/.vim/eVim/conf.vim"))
   source ~/.vim/eVim/conf.vim
 endif
 " install vundle bundles
-if filereadable(expand("./eVim/bundles.vim"))
+if filereadable(expand("~/.vim/eVim/bundles.vim"))
   source ~/.vim/eVim/bundles.vim
 endif
 
