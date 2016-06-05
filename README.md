@@ -102,6 +102,14 @@
         $ cd ~/.vim/bundle/vimproc.vim
         $ make
 
+  * **Installing powerline-fonts**
+
+        $ git clone https://github.com/powerline/fonts.git
+        $ cd fonts
+        $ ./install.sh
+        $ sudo cp -R ~/.local/share/fonts /usr/share/fonts
+        $ sudo fc-cahce -f -v
+
   * **Vim in Linux**
     ![Vim in Linux](./res/vim.linux.png "Vim in Linux")
 
