@@ -69,7 +69,7 @@ if WINDOWS()
   au GUIEnter * simalt ~x
 
   " fixed the utf-8 display error for windows
-  set fileencoding=chinese
+  " set fileencoding=chinese
   source $VIMRUNTIME/delmenu.vim
   source $VIMRUNTIME/menu.vim
   language messages zh_CN.utf-8
@@ -103,7 +103,7 @@ endif
 if g:using_matching_vimrc
   " key-mapping for SingleCompile(compile or run a single source file)
   nnoremap <silent> <F9> :SCCompile<CR>
-  nnoremap <silent> <leader>r :SCCompileRun<CR>
+  nnoremap <silent> <F8> :SCCompileRun<CR>
   if WINDOWS()
     " allow access system clipboard
     nnoremap <silent> <C-S-v> "*p
@@ -113,6 +113,10 @@ endif
 nnoremap <silent> <leader>i :LeadingSpaceToggle<CR>
 " key-mapping for showing tab
 nnoremap <silent> <leader>, :set list!<CR>
+" key-mapping for editing my vimrc
+nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
+" key-mapping for reloading my vimrc
+nnoremap <silent> <leader>r :source $MYVIMRC<CR>
 
 " configure for nerdtree-tabs
 " let g:NERDTreeDirArrows=0 " diable this if not support NERDTreeDirArrows
