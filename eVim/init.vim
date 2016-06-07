@@ -81,7 +81,7 @@ endif
 
 " keyboard shortcuts
 let mapleader = ','
-nnoremap <leader>l :Align
+nnoremap <leader>= :Align
 nnoremap <leader>a :Ag<space>
 " opens a fresh NERD tree
 nnoremap <silent> <leader>d :NERDTreeToggle<CR>
@@ -102,8 +102,8 @@ if g:plugin_leaderf_enabled
 endif
 if g:using_matching_vimrc
   " key-mapping for SingleCompile(compile or run a single source file)
-  nnoremap <silent> <F9> :SCCompile<CR>
   nnoremap <silent> <F8> :SCCompileRun<CR>
+  nnoremap <silent> <F9> :SCCompile<CR>
   if WINDOWS()
     " allow access system clipboard
     nnoremap <silent> <C-S-v> "*p
@@ -116,7 +116,7 @@ nnoremap <silent> <leader>, :set list!<CR>
 " key-mapping for editing my vimrc
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 " key-mapping for reloading my vimrc
-nnoremap <silent> <leader>r :source $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 
 " configure for nerdtree-tabs
 " let g:NERDTreeDirArrows=0 " diable this if not support NERDTreeDirArrows
