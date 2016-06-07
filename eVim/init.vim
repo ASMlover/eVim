@@ -113,6 +113,9 @@ endif
 nnoremap <silent> <leader>i :LeadingSpaceToggle<CR>
 " key-mapping for showing tab
 nnoremap <silent> <leader>, :set list!<CR>
+" key-mapping for git command
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
 " key-mapping for editing my vimrc
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 " key-mapping for reloading my vimrc
