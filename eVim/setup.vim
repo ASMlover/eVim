@@ -28,9 +28,12 @@
 " do not bother with vi compatibility, must be first line
 set nocompatible
 
-if filereadable(expand("~/.vim/eVim/utils.vim"))
-  source ~/.vim/eVim/utils.vim
+if !exists('s:evim_rtp') || !exists(':Import')
+  let s:evim_rtp = $HOME . '/.vim/eVim'
+  command! -nargs=1 Import execute 'source ' . s:evim_rtp . '/<args>'
 endif
+
+Import utils.vim
 
 if !WINDOWS()
   set shell=/bin/sh
@@ -46,13 +49,9 @@ endif
 filetype plugin indent on
 
 " load configure
-if filereadable(expand("~/.vim/eVim/conf.vim"))
-  source ~/.vim/eVim/conf.vim
-endif
+Import conf.vim
 " install vundle bundles
-if filereadable(expand("~/.vim/eVim/bundles.vim"))
-  source ~/.vim/eVim/bundles.vim
-endif
+Import bundles.vim
 
 " enable syntax highlighting
 syntax on

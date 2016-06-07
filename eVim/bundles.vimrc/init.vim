@@ -27,15 +27,9 @@
 
 if g:using_matching_vimrc
   " neocomplete configure
-  if filereadable(expand("~/.vim/eVim/bundles.vimrc/neocomplete.vim"))
-    source ~/.vim/eVim/bundles.vimrc/neocomplete.vim
-  endif
+  Import bundles.vimrc/neocomplete.vim
   " vim-marching configure
-  if filereadable(expand("~/.vim/eVim/bundles.vimrc/vim-matching.vim"))
-    source ~/.vim/eVim/bundles.vimrc/vim-matching.vim
-  endif
+  Import bundles.vimrc/vim-matching.vim
 endif
 " vim-airline configure
-if filereadable(expand("~/.vim/eVim/bundles.vimrc/vim-airline.vim"))
-  source ~/.vim/eVim/bundles.vimrc/vim-airline.vim
-endif
+Import bundles.vimrc/vim-airline.vim

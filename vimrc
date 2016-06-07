@@ -25,6 +25,9 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-if filereadable(expand("~/.vim/eVim/init.vim"))
-  source ~/.vim/eVim/init.vim
+if !exists('s:evim_rtp') || !exists(':Import')
+  let s:evim_rtp = $HOME . '/.vim/eVim'
+  command! -nargs=1 Import execute 'source ' . s:evim_rtp . '/<args>'
 endif
+
+Import init.vim

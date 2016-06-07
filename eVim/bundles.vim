@@ -89,6 +89,4 @@ if g:plugin_jedi_enabled
 endif
 
 " install local bundles configure if available
-if filereadable(expand("~/.vim/eVim/local/bundles/init.vim"))
-  source ~/.vim/eVim/local/bundles/init.vim
-endif
+Import local/bundles/init.vim

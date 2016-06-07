@@ -25,9 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-if filereadable(expand("~/.vim/eVim/setup.vim"))
-  source ~/.vim/eVim/setup.vim
-endif
+Import setup.vim
 
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
@@ -137,10 +135,6 @@ let g:indentLine_leadingSpaceChar='.'
 hi SpellBad ctermbg=52
 
 " configure for bundles plugins
-if filereadable(expand("~/.vim/eVim/bundles.vimrc/init.vim"))
-  source ~/.vim/eVim/bundles.vimrc/init.vim
-endif
+Import bundles.vimrc/init.vim
 " source local vimrc
-if filereadable(expand("~/.vim/eVim/local/vimrc/init.vim"))
-  source ~/.vim/eVim/local/vimrc/init.vim
-endif
+Import local/vimrc/init.vim

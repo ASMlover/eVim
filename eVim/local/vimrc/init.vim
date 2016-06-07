@@ -25,12 +25,6 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-if filereadable(expand("~/.vim/eVim/local/vimrc/common.vim"))
-  source ~/.vim/eVim/local/vimrc/common.vim
-endif
-if filereadable(expand("~/.vim/eVim/local/vimrc/viewer.vim"))
-  source ~/.vim/eVim/local/vimrc/viewer.vim
-endif
-if filereadable(expand("~/.vim/eVim/local/vimrc/header.vim"))
-  source ~/.vim/eVim/local/vimrc/header.vim
-endif
+Import local/vimrc/common.vim
+Import local/vimrc/viewer.vim
+Import local/vimrc/header.vim
