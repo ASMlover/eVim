@@ -66,7 +66,9 @@ set background=dark                                          " set {color} for t
 set guifont=Consolas:h11
 if WINDOWS()
   colorscheme solarized
-  au GUIEnter * simalt ~x
+  if has('gui_running')
+    au GUIEnter * simalt ~x
+  endif
 
   " fixed the utf-8 display error for windows
   " set fileencoding=chinese

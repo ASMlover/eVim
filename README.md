@@ -5,6 +5,9 @@
 
 
 # **Usage**
+  * `F8` compile and run a single source file(C/C++)
+  * `F9` compile a single source file(C/C++)
+  * `F12` making the GVIM window transparent(just for windows platform)
   * `,d` brings up [NERDTree](https://github.com/scrooloose/nerdtree), a sidebar buffer for navigating and manipulating files, opens a fresh NERD tree
   * `,j` brings up [NERDTree](https://github.com/scrooloose/nerdtree), a sidebar buffer for navigating and manipulating files, jump to current file in the NERD tree
   * `,a` starts project search with [ag.vim](https://github.com/rking/ag.vim) using [the silver searcher](https://github.com/ggreer/the_silver_searcher)(like ack, but faster)
@@ -15,9 +18,6 @@
   * `,b` brings up [LeaderF](https://github.com/Yggdroot/LeaderF), quickly locate files, buffers, mrus, ... in large project, launch LeaderF to search buffers
   * `,i` display the indention levels with thin vertical lines
   * `,,` display the whitespace(tab or space)
-  * `F8` compile and run a single source file(C/C++)
-  * `F9` compile a single source file(C/C++)
-  * `F12` making the GVIM window transparent(just for windows platform)
   * `,ev` editing your vimrc($MYVIMRC)
   * `,sv` reloading your vimrc
   * `,gs` key mapping for command `git status`
