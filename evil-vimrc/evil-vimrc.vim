@@ -25,7 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-Import setup.vim
+Import evil-setup.vim
 
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
@@ -135,6 +135,8 @@ let g:indentLine_leadingSpaceChar='.'
 hi SpellBad ctermbg=52
 
 " configure for bundles plugins
-Import bundles.vimrc/init.vim
-" source local vimrc
-Import local/vimrc/init.vim
+Import evil-plugins.vim
+" normal setting of evil-vimrc
+Import evil-setting.vim
+" configure for local vimrc
+Import local/vimrc.vim

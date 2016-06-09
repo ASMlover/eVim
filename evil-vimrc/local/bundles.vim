@@ -25,11 +25,4 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-if g:using_matching_vimrc
-  " neocomplete configure
-  Import bundles.vimrc/neocomplete.vim
-  " vim-marching configure
-  Import bundles.vimrc/vim-matching.vim
-endif
-" vim-airline configure
-Import bundles.vimrc/vim-airline.vim
+" local bundles plugins for customer

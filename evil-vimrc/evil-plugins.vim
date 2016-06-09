@@ -25,6 +25,11 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-Import local/vimrc/common.vim
-Import local/vimrc/viewer.vim
-Import local/vimrc/header.vim
+if g:using_matching_vimrc
+  " neocomplete configure
+  call evil#neocomplete#Configure()
+  " vim-marching configure
+  call evil#matching#Configure()
+endif
+" vim-airline configure
+call evil#airline#Configure()

@@ -25,30 +25,33 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" configure for vim-marching
-" this plugin needs vimproc.vim
-let g:marching_clang_command = "clang"
-let g:marching#clang_command#options = {
-  \ "cpp" : "-std=gnu++1y"
-  \}
+" do not bother with vi compatibility, must be first line
+set nocompatible
 
+if !exists('s:evim_rtp') || !exists(':Import')
+  let s:evim_rtp = $HOME . '/.vim/evil-vimrc'
+  command! -nargs=1 Import execute 'source ' . s:evim_rtp . '/<args>'
+endif
+
+Import evil-utils.vim
+
+if !WINDOWS()
+  set shell=/bin/sh
+endif
+
+" on windows, we alse use '.vim' instead of 'vimfiles'; this make
+" synchronization across (heterogeneous) system easier
 if WINDOWS()
-  let g:marching_include_paths = [
-    \ "C:/MinGW/lib/gcc/mingw32/4.8.1/include",
-    \ "C:/MinGW/lib/gcc/mingw32/4.8.1/include/c++"
-    \]
-else
-  let g:marching_include_paths = filter(
-    \ split(glob("/usr/include/*"), "\n") +
-    \ split(glob("/usr/include/c++/4.8.1/*"), "\n") +
-    \ split(glob("/usr/include/*/"), "\n"),
-    \ "isdirectory(v:val)")
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
 endif
-let g:marching_enable_neocomplete = 1
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns = {}
-endif
-let g:neocomplete#force_omni_input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-set updatetime=200
-imap <buffer> <C-x><C-o> <Plug>(marching_start_omni_complete)
-imap <buffer> <C-x><C-x><C-o> <Plug>(marching_force_start_omni_complete)
+
+" ensure ftdetect et al work by including this after the Vundle stuff
+filetype plugin indent on
+
+" load configure
+Import evil-conf.vim
+" install vundle bundles
+Import evil-bundles.vim
+
+" enable syntax highlighting
+syntax on

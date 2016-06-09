@@ -39,7 +39,7 @@ if WINDOWS()
 endif
 
 " auto pair complete
-func! ClosePair(char)
+func! s:ClosePair(char)
   if getline('.')[col('.') - 1] == a:char
     return "\<Right>"
   else
@@ -48,12 +48,40 @@ func! ClosePair(char)
 endfunction
 " auto pair complete key-mapping
 inoremap ( ()<ESC>i
-inoremap ) <c-r>=ClosePair(')')<CR>
+inoremap ) <c-r>=s:ClosePair(')')<CR>
 inoremap { {}<ESC>i
-inoremap } <c-r>=ClosePair('}')<CR>
+inoremap } <c-r>=s:ClosePair('}')<CR>
 inoremap [ []<ESC>i
-inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap ] <c-r>=s:ClosePair(']')<CR>
 " inoremap < <><ESC>i
-" inoremap > <c-r>=ClosePair('>')<CR>
+" inoremap > <c-r>=s:ClosePair('>')<CR>
 " inoremap " ""<ESC>i
 " inoremap ' ''<ESC>i
+
+" add vimtweak plugin (just for windows)
+" cp vimtweak.dll $VIMRUNTIME
+if WINDOWS()
+  nnoremap <silent> <F12> :call libcallnr("vimtweak.dll", "SetAlpha", 240)<CR>
+endif
+
+" add syntax highlighting
+augroup filetype
+  " Lua
+  au! BufNewFile,BufRead *.lua,*.lum   setf lua
+  " Markdown
+  au! BufNewFile,BufRead *.md,*.mkd,*.mkdn,*.mdwn,*.mdown,*.markdown   setf markdown
+augroup end
+
+  " remember the location of last time shut off
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" automatically removing all trailing whitespace
+autocmd! BufWritePre * :%s/\s\+$//e
+
+" configure for file-headers
+augroup evil-setting
+  call evil#header#KeyMapping()
+  call evil#header#AutoSetting()
+augroup end

@@ -25,3 +25,13 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
+" default use space for indent and full vimrc mode
+let g:using_tab_indent=0
+let g:using_matching_vimrc=1
+
+" enabled plugins
+let g:plugin_ctrlp_enabled=1
+let g:plugin_leaderf_enabled=0
+let g:plugin_pyflakes_enabled=0
+let g:plugin_jedi_enabled=0
+let g:plugin_powerline_enabled=1

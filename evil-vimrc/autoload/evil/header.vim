@@ -25,11 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" add file header
-nnoremap <silent> <F3> :call TitleDescription(2)<CR>'s
-nnoremap <silent> <F4> :call TitleDescription(0)<CR>'s
-nnoremap <silent> <F5> :call TitleDescription(1)<CR>'s
-func! AddFileHeader4C()
+func! s:AddFileHeader4C()
   call append(0, "/*")
   call append(1, " * Copyright (c) ".strftime("%Y")." ASMlover. All rights reserved.")
   call append(2, " *")
@@ -61,19 +57,7 @@ func! AddFileHeader4C()
   echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
 endfunction
 
-" Updated modified filename and time
-func! UpdateTitle()
-  normal m'
-  execute '/# *Last modified:/s@:.*$@\=strftime(":\t%Y-%m-%d %H:%M")@'
-  normal ''
-  normal mk
-  execute '/# *Filename:/s@:.*$@\=":\t\t".expand("%:t")@'
-  execute "noh"
-  normal 'k
-  echohl WarningMsg | echo "Successful in updating the copy right." | echohl None
-endfunction
-
-func! AddFileHeader4CPP()
+func! s:AddFileHeader4CPP()
   call append(0, "// Copyright (c) ".strftime("%Y")." ASMlover. All rights reserved.")
   call append(1, "//")
   call append(2, "// Redistribution and use in source and binary forms, with or without")
@@ -103,7 +87,7 @@ func! AddFileHeader4CPP()
   echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
 endfunction
 
-func! AddFileHeader4Script()
+func! s:AddFileHeader4Script()
   call append(0, "# Copyright (c) ".strftime("%Y")." ASMlover. All rights reserved.")
   call append(1, "#")
   call append(2, "# Redistribution and use in source and binary forms, with or without")
@@ -133,7 +117,7 @@ func! AddFileHeader4Script()
   echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
 endfunction
 
-func! AddFileHeader4Python()
+func! s:AddFileHeader4Python()
   call append(0, "#!/usr/bin/env python")
   call append(1, "# -*- coding: UTF-8 -*-")
   call append(2, "#")
@@ -166,7 +150,7 @@ func! AddFileHeader4Python()
   echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
 endfunction
 
-func! AddFileHeader4Shell()
+func! s:AddFileHeader4Shell()
   call append(0, "#!/usr/bin/env bash")
   call append(1, "#")
   call append(2, "# Copyright (c) ".strftime("%Y")." ASMlover. All rights reserved.")
@@ -198,33 +182,54 @@ func! AddFileHeader4Shell()
   echohl WarningMsg | echo "Successful in adding the copyright." | echohl None
 endfunction
 
+" Updated modified filename and time
+func! s:UpdateTitle()
+  normal m'
+  execute '/# *Last modified:/s@:.*$@\=strftime(":\t%Y-%m-%d %H:%M")@'
+  normal ''
+  normal mk
+  execute '/# *Filename:/s@:.*$@\=":\t\t".expand("%:t")@'
+  execute "noh"
+  normal 'k
+  echohl WarningMsg | echo "Successful in updating the copy right." | echohl None
+endfunction
+
 " 0: default/C
 " 1: cpp
 " 2: Script
-func! TitleDescription(type)
+func! s:TitleDescription(type)
   let n=1
   while n < 10
     let line = getline(n)
       if line =~ '^\#\s*\S*Copyright:\S*.*$'
-        call UpdateTitle()
+        call s:UpdateTitle()
         return
       endif
       let n = n + 1
   endwhile
 
   if a:type == 0
-    call AddFileHeader4C()
+    call s:AddFileHeader4C()
   elseif a:type == 1
-    call AddFileHeader4CPP()
+    call s:AddFileHeader4CPP()
   elseif a:type == 2
-    call AddFileHeader4Script()
+    call s:AddFileHeader4Script()
   else
-    call AddFileHeader4C()
+    call s:AddFileHeader4C()
   endif
 endfunction
 
-autocmd! BufNewFile *.c call AddFileHeader4C()
-autocmd! BufNewFile *.cpp,*.cc,*.cxx,*.hpp call AddFileHeader4CPP()
-autocmd! BufNewFile *.mk,Makefile call AddFileHeader4Script()
-autocmd! BufNewFile *.py call AddFileHeader4Python()
-autocmd! BufNewFile *.sh call AddFileHeader4Shell()
+func! evil#header#KeyMapping()
+  " add file header
+  nnoremap <silent> <F3> :call s:TitleDescription(2)<CR>'s
+  nnoremap <silent> <F4> :call s:TitleDescription(0)<CR>'s
+  nnoremap <silent> <F5> :call s:TitleDescription(1)<CR>'s
+endfunction
+
+func! evil#header#AutoSetting()
+  autocmd! BufNewFile *.c call s:AddFileHeader4C()
+  autocmd! BufNewFile *.cpp,*.cc,*.cxx,*.hpp call s:AddFileHeader4CPP()
+  autocmd! BufNewFile *.mk,Makefile call s:AddFileHeader4Script()
+  autocmd! BufNewFile *.py call s:AddFileHeader4Python()
+  autocmd! BufNewFile *.sh call s:AddFileHeader4Shell()
+endfunction

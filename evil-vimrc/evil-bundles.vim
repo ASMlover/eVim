@@ -89,4 +89,4 @@ if g:plugin_jedi_enabled
 endif
 
 " install local bundles configure if available
-Import local/bundles/init.vim
+Import local/bundles.vim
