@@ -197,7 +197,7 @@ endfunction
 " 0: default/C
 " 1: cpp
 " 2: Script
-func! s:TitleDescription(type)
+func! TitleDescription(type)
   let n=1
   while n < 10
     let line = getline(n)
@@ -221,9 +221,9 @@ endfunction
 
 func! evil#header#KeyMapping()
   " add file header
-  nnoremap <silent> <F3> :call s:TitleDescription(2)<CR>'s
-  nnoremap <silent> <F4> :call s:TitleDescription(0)<CR>'s
-  nnoremap <silent> <F5> :call s:TitleDescription(1)<CR>'s
+  nnoremap <silent> <F3> :call TitleDescription(2)<CR>'s
+  nnoremap <silent> <F4> :call TitleDescription(0)<CR>'s
+  nnoremap <silent> <F5> :call TitleDescription(1)<CR>'s
 endfunction
 
 func! evil#header#AutoSetting()

@@ -50,18 +50,21 @@ if not exist "%HOME%\.vim" (
 
 REM copy configure of vim
 call copy /Y vimrc "%HOME%\_vimrc"
-xcopy /S /E /Q /Y .\eVim "%HOME%\.vim\eVim"
+if exist "%HOME%\.vim\evil-vimrc" (
+  call rmdir /s /q "%HOME%\.vim\evil-vimrc"
+)
+xcopy /s /e /q /y .\evil-vimrc "%HOME%\.vim\evil-vimrc"
 
 REM copy useful command: ag.exe, ctags.exe and vimtweak.dll
-call copy /Y bin\ag.exe "%VIMRUNTIME%"
-call copy /Y bin\ctags.exe "%VIMRUNTIME%"
-call copy /Y bin\vimtweak.dll "%VIMRUNTIME%"
+call copy /y bin\ag.exe "%VIMRUNTIME%"
+call copy /y bin\ctags.exe "%VIMRUNTIME%"
+call copy /y bin\vimtweak.dll "%VIMRUNTIME%"
 
 REM copy my customized syntax(lua, c, python)
 if not exist "%HOME%\.vim\syntax" (
   call mkdir "%HOME%\.vim\syntax"
 )
-call copy /Y syntax\* "%HOME%\.vim\syntax"
+call copy /y syntax\* "%HOME%\.vim\syntax"
 
 if not exist "%HOME%\.vim\bundle" (
   call mkdir "%HOME%\.vim\bundle"
@@ -77,7 +80,7 @@ if not exist "%HOME%\.vim\bundle\Vundle.vim" (
   call cd %HOME%
 )
 
-call gvim -u "%HOME%\.vim\eVim\setup.vim" +PluginInstall +qall
+call gvim -u "%HOME%\.vim\evil-vimrc\evil-setup.vim" +PluginInstall +qall
 
 echo installing eVim successfully ...
 pause

@@ -82,6 +82,7 @@ autocmd! BufWritePre * :%s/\s\+$//e
 
 " configure for file-headers
 augroup evil-setting
+  set runtimepath+=~/.vim/evil-vimrc
   call evil#header#KeyMapping()
   call evil#header#AutoSetting()
 augroup end

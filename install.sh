@@ -73,7 +73,10 @@ create_vimrc() {
   fi
 
   cp $app_dir/vimrc $HOME/.vimrc
-  cp -R $app_dir/eVim $HOME/.vim
+  if [ -d $HOME/.vim/evil-vimrc ]; then
+    rm -rf $HOME/.vim/evil-vimrc
+  fi
+  cp -R $app_dir/evil-vimrc $HOME/.vim
   cp -R $app_dir/syntax $HOME/.vim/
 }
 

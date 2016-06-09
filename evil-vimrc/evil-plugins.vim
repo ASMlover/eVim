@@ -25,6 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
+set runtimepath+=~/.vim/evil-vimrc
 if g:using_matching_vimrc
   " neocomplete configure
   call evil#neocomplete#Configure()
