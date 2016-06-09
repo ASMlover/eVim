@@ -30,5 +30,4 @@ if !exists('s:evim_rtp') || !exists(':Import')
   command! -nargs=1 Import execute 'source ' . s:evim_rtp . '/<args>'
 endif
 
-execute 'set runtimepath+=' . s:evim_rtp
 Import evil-vimrc.vim

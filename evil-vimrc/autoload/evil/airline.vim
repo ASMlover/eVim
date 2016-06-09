@@ -25,7 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-func! evil#airline#Configure()
+func! evil#airline#setting_configure()
   " configure for powerline
   let g:airline_powerline_fonts=1
   if g:airline_powerline_fonts

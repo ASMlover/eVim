@@ -25,7 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-func! evil#matching#Configure()
+func! evil#matching#settting_configure()
   " configure for vim-marching
   " this plugin needs vimproc.vim
   let g:marching_clang_command = "clang"

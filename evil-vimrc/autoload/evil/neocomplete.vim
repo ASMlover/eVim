@@ -25,7 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-func! evil#neocomplete#Configure()
+func! evil#neocomplete#setting_coinfigure()
   " configure for plugin(neocomplete)
   let g:acp_enableAtStartup = 0                                " disable autocomplpop
   let g:neocomplete#enable_at_startup = 1                      " use neocomplete
