@@ -53,7 +53,7 @@ call copy /Y vimrc "%HOME%\_vimrc"
 if exist "%HOME%\.vim\evil-vimrc" (
   call rmdir /s /q "%HOME%\.vim\evil-vimrc"
 )
-xcopy /s /e /q /y .\evil-vimrc "%HOME%\.vim\evil-vimrc"
+xcopy /s /e /q /y .\evil-vimrc "%HOME%\.vim\evil-vimrc\"
 
 REM copy useful command: ag.exe, ctags.exe and vimtweak.dll
 call copy /y bin\ag.exe "%VIMRUNTIME%"
