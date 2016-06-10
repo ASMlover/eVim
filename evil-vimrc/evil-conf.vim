@@ -25,6 +25,9 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
+" default company name for file-header
+let g:company_name='ASMlover'
+
 " default use space for indent and full vimrc mode
 let g:using_tab_indent=0
 let g:using_matching_vimrc=1
