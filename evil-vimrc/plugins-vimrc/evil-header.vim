@@ -219,17 +219,13 @@ func! TitleDescription(type)
   endif
 endfunction
 
-func! evil#header#setting_key_mapping()
-  " add file header
-  nnoremap <silent> <F3> :call TitleDescription(2)<CR>'s
-  nnoremap <silent> <F4> :call TitleDescription(0)<CR>'s
-  nnoremap <silent> <F5> :call TitleDescription(1)<CR>'s
-endfunction
+" add file header
+nnoremap <silent> <F3> :call TitleDescription(2)<CR>'s
+nnoremap <silent> <F4> :call TitleDescription(0)<CR>'s
+nnoremap <silent> <F5> :call TitleDescription(1)<CR>'s
 
-func! evil#header#load_auto_command()
-  autocmd! BufNewFile *.c call s:AddFileHeader4C()
-  autocmd! BufNewFile *.cpp,*.cc,*.cxx,*.hpp call s:AddFileHeader4CPP()
-  autocmd! BufNewFile *.mk,Makefile call s:AddFileHeader4Script()
-  autocmd! BufNewFile *.py call s:AddFileHeader4Python()
-  autocmd! BufNewFile *.sh call s:AddFileHeader4Shell()
-endfunction
+autocmd! BufNewFile *.c call s:AddFileHeader4C()
+autocmd! BufNewFile *.cpp,*.cc,*.cxx,*.hpp call s:AddFileHeader4CPP()
+autocmd! BufNewFile *.mk,Makefile call s:AddFileHeader4Script()
+autocmd! BufNewFile *.py call s:AddFileHeader4Python()
+autocmd! BufNewFile *.sh call s:AddFileHeader4Shell()

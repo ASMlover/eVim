@@ -81,7 +81,4 @@ endif
 autocmd! BufWritePre * :%s/\s\+$//e
 
 " configure for file-headers
-augroup evil-setting
-  call evil#header#setting_key_mapping()
-  call evil#header#load_auto_command()
-augroup end
+Import plugins-vimrc/evil-header.vim

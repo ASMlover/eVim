@@ -25,46 +25,44 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-func! evil#airline#setting_configure()
-  " configure for powerline
-  let g:airline_powerline_fonts=1
-  if g:airline_powerline_fonts
-    if WINDOWS()
-      let g:Powerline_symbols='fancy'
-      set guifont=Consolas\ for\ Powerline\ FixedD:h11
-      if !exists('g:airline_symbols')
-        let g:airline_symbols={}
-      endif
-      let g:airline_symbols.branch="\u2b60"
-      let g:airline_symbols.readonly="\u2b64"
-      let g:airline_symbols.linenr="\u2b61"
-      let g:airline_symbols.maxlinenr='Ξ'
-      let g:airline_left_sep="\u2b80"
-      let g:airline_left_alt_sep="\u2b81"
-      let g:airline_right_sep="\u2b82"
-      let g:airline_right_alt_sep="\u2b83"
-      let g:airline#extensions#tabline#left_sep="\u2b80"
-      let g:airline#extensions#tabline#left_alt_sep="\u2b81"
+" configure for powerline
+let g:airline_powerline_fonts=1
+if g:airline_powerline_fonts
+  if WINDOWS()
+    let g:Powerline_symbols='fancy'
+    set guifont=Consolas\ for\ Powerline\ FixedD:h11
+    if !exists('g:airline_symbols')
+      let g:airline_symbols={}
     endif
+    let g:airline_symbols.branch="\u2b60"
+    let g:airline_symbols.readonly="\u2b64"
+    let g:airline_symbols.linenr="\u2b61"
+    let g:airline_symbols.maxlinenr='Ξ'
+    let g:airline_left_sep="\u2b80"
+    let g:airline_left_alt_sep="\u2b81"
+    let g:airline_right_sep="\u2b82"
+    let g:airline_right_alt_sep="\u2b83"
+    let g:airline#extensions#tabline#left_sep="\u2b80"
+    let g:airline#extensions#tabline#left_alt_sep="\u2b81"
   endif
-  let g:airline_theme='xtermlight'
-  let g:airline_section_y=airline#section#create(['ffenc', '[BN:%{bufnr("%")}]'])
-  let g:airline_extensions=['branch', 'tabline']
-  let g:airline#extensions#branch#format='CustomBranchName'
-  func! CustomBranchName(name)
-    return '('. a:name . ')'
-  endfunction
-  let g:airline#extensions#tabline#tab_nr_type=1
-  let g:airline#extensions#tabline#buffer_idx_mode=1
-  nmap <silent> <leader>1 <Plug>AirlineSelectTab1
-  nmap <silent> <leader>2 <Plug>AirlineSelectTab2
-  nmap <silent> <leader>3 <Plug>AirlineSelectTab3
-  nmap <silent> <leader>4 <Plug>AirlineSelectTab4
-  nmap <silent> <leader>5 <Plug>AirlineSelectTab5
-  nmap <silent> <leader>6 <Plug>AirlineSelectTab6
-  nmap <silent> <leader>7 <Plug>AirlineSelectTab7
-  nmap <silent> <leader>8 <Plug>AirlineSelectTab8
-  nmap <silent> <leader>9 <Plug>AirlineSelectTab9
-  nmap <silent> <leader>+ <Plug>AirlineSelectNextTab
-  nmap <silent> <leader>- <Plug>AirlineSelectPrevTab
+endif
+let g:airline_theme='xtermlight'
+let g:airline_section_y=airline#section#create(['ffenc', '[BN:%{bufnr("%")}]'])
+let g:airline_extensions=['branch', 'tabline']
+let g:airline#extensions#branch#format='CustomBranchName'
+func! CustomBranchName(name)
+  return '('. a:name . ')'
 endfunction
+let g:airline#extensions#tabline#tab_nr_type=1
+let g:airline#extensions#tabline#buffer_idx_mode=1
+nmap <silent> <leader>1 <Plug>AirlineSelectTab1
+nmap <silent> <leader>2 <Plug>AirlineSelectTab2
+nmap <silent> <leader>3 <Plug>AirlineSelectTab3
+nmap <silent> <leader>4 <Plug>AirlineSelectTab4
+nmap <silent> <leader>5 <Plug>AirlineSelectTab5
+nmap <silent> <leader>6 <Plug>AirlineSelectTab6
+nmap <silent> <leader>7 <Plug>AirlineSelectTab7
+nmap <silent> <leader>8 <Plug>AirlineSelectTab8
+nmap <silent> <leader>9 <Plug>AirlineSelectTab9
+nmap <silent> <leader>+ <Plug>AirlineSelectNextTab
+nmap <silent> <leader>- <Plug>AirlineSelectPrevTab

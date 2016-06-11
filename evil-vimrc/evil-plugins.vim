@@ -27,9 +27,9 @@
 
 if g:using_matching_vimrc
   " neocomplete configure
-  call evil#neocomplete#setting_coinfigure()
+  Import plugins-vimrc/evil-neocomplete.vim
   " vim-marching configure
-  call evil#matching#settting_configure()
+  Import plugins-vimrc/evil-matching.vim
 endif
 " vim-airline configure
-call evil#airline#setting_configure()
+Import plugins-vimrc/evil-airline.vim
