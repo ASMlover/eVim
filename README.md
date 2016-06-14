@@ -112,7 +112,7 @@
         $ cd fonts
         $ ./install.sh
         $ sudo cp -R ~/.local/share/fonts /usr/share/fonts
-        $ sudo fc-cahce -f -v
+        $ sudo fc-cache -f -v
 
   * **Vim in Linux**
     ![Vim in Linux](./res/vim.linux.png "Vim in Linux")
