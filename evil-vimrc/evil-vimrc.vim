@@ -134,7 +134,7 @@ let g:indentLine_leadingSpaceChar='.'
 " configure for spell bad colors
 hi SpellBad ctermbg=52
 
-set runtimepath+=~/.vim/evil-vimrc
+execute 'set runtimepath+=' . g:evim_rtp
 " configure for bundles plugins
 Import evil-plugins.vim
 " normal setting of evil-vimrc

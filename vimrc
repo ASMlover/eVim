@@ -25,9 +25,9 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-if !exists('s:evim_rtp') || !exists(':Import')
-  let s:evim_rtp = $HOME . '/.vim/evil-vimrc'
-  command! -nargs=1 Import execute 'source ' . s:evim_rtp . '/<args>'
+if !exists('g:evim_rtp') || !exists(':Import')
+  let g:evim_rtp = $HOME . '/.vim/evil-vimrc'
+  command! -nargs=1 Import execute 'source ' . g:evim_rtp . '/<args>'
 endif
 
 Import evil-vimrc.vim

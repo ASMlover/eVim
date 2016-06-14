@@ -39,7 +39,7 @@ if WINDOWS()
 endif
 
 " auto pair complete
-func! s:ClosePair(char)
+func! ClosePair(char)
   if getline('.')[col('.') - 1] == a:char
     return "\<Right>"
   else
@@ -48,13 +48,13 @@ func! s:ClosePair(char)
 endfunction
 " auto pair complete key-mapping
 inoremap ( ()<ESC>i
-inoremap ) <c-r>=s:ClosePair(')')<CR>
+inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap { {}<ESC>i
-inoremap } <c-r>=s:ClosePair('}')<CR>
+inoremap } <c-r>=ClosePair('}')<CR>
 inoremap [ []<ESC>i
-inoremap ] <c-r>=s:ClosePair(']')<CR>
+inoremap ] <c-r>=ClosePair(']')<CR>
 " inoremap < <><ESC>i
-" inoremap > <c-r>=s:ClosePair('>')<CR>
+" inoremap > <c-r>=ClosePair('>')<CR>
 " inoremap " ""<ESC>i
 " inoremap ' ''<ESC>i
 
@@ -72,7 +72,7 @@ augroup filetype
   au! BufNewFile,BufRead *.md,*.mkd,*.mkdn,*.mdwn,*.mdown,*.markdown   setf markdown
 augroup end
 
-  " remember the location of last time shut off
+" remember the location of last time shut off
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
