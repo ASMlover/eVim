@@ -44,12 +44,17 @@ if g:airline_powerline_fonts
     let g:airline_right_alt_sep="\u2b83"
     let g:airline#extensions#tabline#left_sep="\u2b80"
     let g:airline#extensions#tabline#left_alt_sep="\u2b81"
-  else
+  elseif DARWIN()
+    " just for MacVim
+    if has('gui_running')
+      set guifont=Source\ Code\ Pro\ for\ Powerline:h14
+    endif
+  elseif LINUX()
     if !has('gui_running')
       let g:Powerline_symbols='fancy'
       set guifont=PowerlineSymbols\ for\ Powerline
       if !exists('g:airline_symbols')
-        g:airline_symbols={}
+        let g:airline_symbols={}
       endif
       let g:airline_symbols.maxlinenr='Ξ'
     endif
