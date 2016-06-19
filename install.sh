@@ -82,7 +82,7 @@ create_vimrc() {
 
 setup_vundle() {
   echo "setting vundles for vim ..."
-  vim -u $HOME/.vim/eVim/setup.vim +PluginInstall +qall
+  vim -u $HOME/.vim/evil-vimrc/evil-setup.vim +PluginInstall +qall
 }
 
 do_install() {
