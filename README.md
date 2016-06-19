@@ -138,5 +138,12 @@
         $ cd fonts
         $ ./install.sh
 
+  * **Building YCM**
+
+    If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it.
+
+        $ cd ~/.vim/bundle/YouCompleteMe
+        $ ./install.py --clang-completer
+
   * **Vim in OSX**
     ![Vim in OSX](./res/vim.darwin.png "Vim in OSX")
