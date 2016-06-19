@@ -38,3 +38,4 @@ let g:plugin_leaderf_enabled=1
 let g:plugin_pyflakes_enabled=1
 let g:plugin_jedi_enabled=1
 let g:plugin_powerline_enabled=1
+let g:plugin_ycm_enabled=1

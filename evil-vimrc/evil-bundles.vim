@@ -87,6 +87,10 @@ if g:plugin_jedi_enabled
   " jedi autocompletion
   Bundle 'davidhalter/jedi-vim'
 endif
+if g:plugin_ycm_enabled
+  " a code-completion engine for vim
+  Bundle 'Valloric/YouCompleteMe'
+endif
 
 " install local bundles configure if available
 Import local/bundles.vim

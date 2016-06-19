@@ -25,15 +25,6 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-if g:using_matching_vimrc
-  " neocomplete configure
-  Import plugins-vimrc/evil-neocomplete.vim
-  " vim-marching configure
-  Import plugins-vimrc/evil-matching.vim
-endif
-" vim-airline configure
-Import plugins-vimrc/evil-airline.vim
-if g:plugin_ycm_enabled
-  " ycm configure
-  Import plugins-vimrc/evil-ycm.vim
-endif
+" configure for YouCompleteMe
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf=0
