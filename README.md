@@ -65,6 +65,14 @@
 
           \> copy /Y .\extra\powerline-fonts\*.* C:\Windows\Fonts
 
+  * **Building YCM**
+
+    If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it. Make sure you are installed CMake and setted the environment for using MSVC(VC2013+).
+
+          \> cd ~/.vim/bundle/YouCompleteMe
+          \> git submodule update --init --recursive
+          \> python install.py --clang-completer
+
   * **GVim in Windows**
     ![GVim in Windows](./res/vim.windows.png "GVim in Windows")
 
