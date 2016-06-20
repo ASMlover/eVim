@@ -80,6 +80,10 @@ else
 endif
 
 " keyboard shortcuts
+if WINDOWS()
+  " allow access system clipboard
+  nnoremap <silent> <C-S-v> "*p
+endif
 let mapleader = ','
 nnoremap <leader>= :Align
 nnoremap <leader>a :Ag<space>
@@ -104,10 +108,6 @@ if g:using_matching_vimrc
   " key-mapping for SingleCompile(compile or run a single source file)
   nnoremap <silent> <F8> :SCCompileRun<CR>
   nnoremap <silent> <F9> :SCCompile<CR>
-  if WINDOWS()
-    " allow access system clipboard
-    nnoremap <silent> <C-S-v> "*p
-  endif
 endif
 " key-mapping for indentLine
 nnoremap <silent> <leader>i :LeadingSpaceToggle<CR>
