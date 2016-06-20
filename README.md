@@ -114,6 +114,13 @@
         $ sudo cp -R ~/.local/share/fonts /usr/share/fonts
         $ sudo fc-cache -f -v
 
+  * **Building YCM**
+
+    If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it.
+
+        $ cd ~/.vim/bundle/YouCompleteMe
+        $ ./install.py --clang-completer
+
   * **Vim in Linux**
     ![Vim in Linux](./res/vim.linux.png "Vim in Linux")
 
