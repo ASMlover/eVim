@@ -25,18 +25,6 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" default company name for file-header
-let g:company_name='ASMlover'
-
-" default use space for indent and full vimrc mode
-let g:using_tab_indent=0
-let g:using_matching_vimrc=0
-
-" enabled plugins
-let g:plugin_ctrlp_enabled=0
-let g:plugin_leaderf_enabled=1
-let g:plugin_pyflakes_enabled=0
-let g:plugin_jedi_enabled=0
-let g:plugin_powerline_enabled=1
-let g:plugin_ycm_enabled=1
-let g:plugin_syntastic_enabled=1
+" configure for syntastic
+let g:syntastic_python_python_exec = 'python'
+let g:syntastic_python_checkers = ['pyflakes']

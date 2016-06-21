@@ -83,6 +83,10 @@ if g:plugin_pyflakes_enabled
   " a plugin for checking Python code on the fly
   Bundle 'kevinw/pyflakes-vim'
 endif
+if g:plugin_syntastic_enabled
+  " syntax checking hacks for vim
+  Bundle 'scrooloose/syntastic'
+endif
 if g:plugin_jedi_enabled
   " jedi autocompletion
   Bundle 'davidhalter/jedi-vim'

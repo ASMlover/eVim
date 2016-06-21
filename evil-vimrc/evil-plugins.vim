@@ -33,6 +33,10 @@ if g:using_matching_vimrc
 endif
 " vim-airline configure
 Import plugins-vimrc/evil-airline.vim
+if g:plugin_syntastic_enabled
+  " syntastic configure
+  Import plugins-vimrc/evil-syntastic.vim
+endif
 if g:plugin_ycm_enabled
   " ycm configure
   Import plugins-vimrc/evil-ycm.vim

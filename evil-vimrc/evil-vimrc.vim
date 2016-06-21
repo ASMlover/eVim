@@ -31,6 +31,7 @@ set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
 set showcmd
+set smarttab                                                 " setting smart tab
 if g:using_tab_indent
   set noexpandtab                                            " do not expand tab to space
   set tabstop=4                                              " actual tabs occupy 4 characters

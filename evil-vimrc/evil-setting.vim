@@ -70,6 +70,10 @@ augroup filetype
   au! BufNewFile,BufRead *.lua,*.lum   setf lua
   " Markdown
   au! BufNewFile,BufRead *.md,*.mkd,*.mkdn,*.mdwn,*.mdown,*.markdown   setf markdown
+  " python
+  if g:using_tab_indent
+    au! FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+  endif
 augroup end
 
 " remember the location of last time shut off
