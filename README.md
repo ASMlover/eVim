@@ -1,7 +1,7 @@
 # **eVim**
 ***
 
-**Configure files for [Vim](https://github.com/vim/vim)**.
+**Configure files for [Vim](https://github.com/vim/vim), built for Windows/Linux and macOS.**
 
 
 # **Usage**
@@ -133,7 +133,7 @@
     ![Vim in Linux](./res/vim.linux.png "Vim in Linux")
 
 
-## **OSX**
+## **macOS**
   See the document of the Linux part.
 
   * **Install vim7.4**
@@ -160,5 +160,5 @@
         $ cd ~/.vim/bundle/YouCompleteMe
         $ ./install.py --clang-completer
 
-  * **Vim in OSX**
-    ![Vim in OSX](./res/vim.darwin.png "Vim in OSX")
+  * **Vim in macOS**
+    ![Vim in macOS](./res/vim.darwin.png "Vim in macOS")
