@@ -1,7 +1,7 @@
 # **eVim**
 ***
 
-  **Configure files for Vim**.
+**Configure files for [Vim](https://github.com/vim/vim)**.
 
 
 # **Usage**
