@@ -25,12 +25,6 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-if g:using_matching_vimrc
-  " neocomplete configure
-  Import plugins-vimrc/evil-neocomplete.vim
-  " vim-marching configure
-  Import plugins-vimrc/evil-matching.vim
-endif
 " vim-airline configure
 Import plugins-vimrc/evil-airline.vim
 if g:plugin_syntastic_enabled
