@@ -30,7 +30,6 @@
 app_name='eVim'
 app_dir=$(cd `dirname $0`; pwd)
 app_url='https://github.com/ASMlover/eVim.git'
-vundle_url='https://github.com/gmarik/Vundle.vim.git'
 
 upgrade_repo() {
   echo "updating $1 ..."
@@ -38,28 +37,16 @@ upgrade_repo() {
     cd $app_dir &&
       git pull
   fi
-
-  if [ $1 = "Vundle" ]; then
-    cd $HOME/.vim/bundle/Vundle.vim &&
-      git pull
-  fi
 }
 
 clone_repo() {
   echo "cloning eVim ..."
-  if [ ! -e $app_dir ]; then
+  if [ ! -e $app_dir/evil-vimrc ]; then
+    app_dir=$HOME/$app_dir
     git clone $app_url $app_dir
+    cd $app_dir
   else
     upgrade_repo $app_name "successfully updated $app_name"
-  fi
-}
-
-clone_vundle() {
-  echo "cloning Vundle.vim ..."
-  if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
-    git clone $vundle_url $HOME/.vim/bundle/Vundle.vim
-  else
-    upgrade_repo "Vundle" "successfully updated Vundle"
   fi
 }
 
@@ -68,27 +55,27 @@ create_vimrc() {
   if [ ! -d $HOME/.vim ]; then
     mkdir -p $HOME/.vim
   fi
-  if [ ! -d $HOME/.vim/bundle ]; then
-    mkdir -p $HOME/.vim/bundle
+  if [ ! -d $HOME/.vim/autoload ]; then
+    mkdir -p $HOME/.vim/autoload
   fi
 
+  cp $app_dir/tools/plug.vim $HOME/.vim/autoload
   cp $app_dir/vimrc $HOME/.vimrc
   if [ -d $HOME/.vim/evil-vimrc ]; then
     rm -rf $HOME/.vim/evil-vimrc
   fi
   cp -R $app_dir/evil-vimrc $HOME/.vim
-  cp -R $app_dir/syntax $HOME/.vim/
+  cp -R $app_dir/extras/syntax $HOME/.vim/
 }
 
 setup_vundle() {
   echo "setting vundles for vim ..."
-  vim -u $HOME/.vim/evil-vimrc/evil-setup.vim +PluginInstall +qall
+  vim -u $HOME/.vim/evil-vimrc/evil-setup.vim +PlugInstall +qall
 }
 
 do_install() {
   clone_repo    "successfully cloned" $app_name
   create_vimrc  "setting up vimrc"
-  clone_vundle  "successfully cloned Vundle"
   setup_vundle  "now updating/installing plugins using Vundle"
   echo 'installing eVim successfully ...'
 }
