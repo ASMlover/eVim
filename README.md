@@ -46,11 +46,12 @@
   * **Installing eVim**
 
         \> git clone https://github.com/ASMlover/eVim.git
+        \> cd eVim
         \> install.bat
 
   * **Installing powerline-fonts**
 
-    Copy powerline fonts from .\extra\powerline-fonts into your system fonts directory.
+    Copy powerline fonts from .\extra\powerline-fonts into your system fonts directory, you may need **Administrator permission**.
 
           \> copy /Y .\extras\powerline-fonts\*.* C:\Windows\Fonts
 
@@ -96,6 +97,7 @@
   * **Installing eVim**
 
         $ git clone https://github.com/ASMlover/eVim.git
+        $ cd eVim
         $ ./install.sh install
 
   * **Installing powerline-fonts**
