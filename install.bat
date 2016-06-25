@@ -31,7 +31,7 @@
 @if not exist "%HOME%" @set HOME=%USERPROFILE%
 
 @set APP_DIR=%cd%
-if not exist "%APP_DIR%/evil-vimrc" @set APP_DIR=%HOME%\eVim
+if not exist "%APP_DIR%\evil-vimrc" @set APP_DIR=%HOME%\eVim
 if not exist "%APP_DIR%" (
   echo cloning eVim ...
   call git clone https://github.com/ASMlover/eVim.git "%APP_DIR%"
