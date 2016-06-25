@@ -49,10 +49,21 @@ if not exist "%HOME%\.vim" (
   call mkdir "%HOME%\.vim"
 )
 
+:: copy
 if not exist "%HOME%\.vim\autoload%" (
   call mkdir "%HOME%\.vim\autoload"
 )
-call copy /Y tools\plug.vim "%HOME%\.vim\autoload\"
+:: download vim-plug
+if not exist "%APP_DIR%\vim-plug" (
+  echo cloning vim-plug ...
+  call git clone https://github.com/junegunn/vim-plug.git
+) else (
+  echo updating vim-plug ...
+  chdir vim-plug
+  call git pull
+  chdir ..
+)
+call copy /Y vim-plug/plug.vim "%HOME%\.vim\autoload\"
 
 :: copy configure of vim
 call copy /Y vimrc "%HOME%\_vimrc"
