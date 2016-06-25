@@ -42,7 +42,7 @@ upgrade_repo() {
 clone_repo() {
   echo "cloning eVim ..."
   if [ ! -e $app_dir/evil-vimrc ]; then
-    app_dir=$HOME/$app_dir
+    app_dir=$HOME/$app_name
     git clone $app_url $app_dir
     cd $app_dir
   else
