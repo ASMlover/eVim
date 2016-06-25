@@ -25,6 +25,8 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
+Import plugins-vimrc/evil-nerdtree.vim
+Import plugins-vimrc/evil-indentline.vim
 " vim-airline configure
 Import plugins-vimrc/evil-airline.vim
 if g:plugin_syntastic_enabled

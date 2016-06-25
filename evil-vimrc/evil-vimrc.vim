@@ -122,16 +122,6 @@ nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 " key-mapping for reloading my vimrc
 nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 
-" configure for nerdtree-tabs
-" let g:NERDTreeDirArrows=0 " diable this if not support NERDTreeDirArrows
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_open_on_new_tab=1
-
-" configure for indentLine
-let g:indentLine_enabled=0
-let g:indentLine_char='.'
-let g:indentLine_leadingSpaceChar='.'
-
 " configure for spell bad colors
 hi SpellBad ctermbg=52
 
