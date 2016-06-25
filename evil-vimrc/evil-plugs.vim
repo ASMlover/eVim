@@ -41,41 +41,41 @@ call plug#begin('~/.vim/plugged')
   " help folks to align text, etc
   Plug 'vim-scripts/Align', {'on': 'Align'}
   " use ag(the_silver_searcher, better than ack, which is better than grep)
-  Bundle 'rking/ag.vim', {'on': 'Ag'}
+  Plug 'rking/ag.vim', {'on': 'Ag'}
   " a tree explorer plugin for vim
-  Bundle 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
+  Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
   " nerdtree and tabs together in vim
-  Bundle 'jistr/vim-nerdtree-tabs', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
+  Plug 'jistr/vim-nerdtree-tabs', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
   " a plugin that displays tags in a window
-  Bundle 'majutsushi/tagbar', {'on': 'TagbarToggle'}
+  Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
   " display the indention levels with thin vertical lines
-  Bundle 'Yggdroot/indentLine', {'on': 'LeadingSpaceToggle'}
+  Plug 'Yggdroot/indentLine', {'on': 'LeadingSpaceToggle'}
   " git commands in vim
-  Bundle 'tpope/vim-fugitive'
+  Plug 'tpope/vim-fugitive'
   " rename the current file in the vim buffer and retain relative path
-  Bundle 'danro/rename.vim', {'on': 'Rename'}
+  Plug 'danro/rename.vim', {'on': 'Rename'}
   " smart status airline for vim
-  Bundle 'ASMlover/vim-airline'
-  Bundle 'vim-airline/vim-airline-themes'
+  Plug 'ASMlover/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
   if g:plugin_sccompile_enabled
     " a plugin marking it more convenient to compile or run a single source file
-    Bundle 'xuhdev/SingleCompile', {'on': ['SCCompileRun', 'SCCompile']}
+    Plug 'xuhdev/SingleCompile', {'on': ['SCCompileRun', 'SCCompile']}
   endif
   if g:plugin_ctrlp_enabled
     " full path fuzzy file, buffer, meu, tag... finder for vim
-    Bundle 'kien/ctrlp.vim', {'on': ['CtrlP', 'CtrlPBuffer', 'CtrlPClearCache']}
+    Plug 'kien/ctrlp.vim', {'on': ['CtrlP', 'CtrlPBuffer', 'CtrlPClearCache']}
   endif
   if g:plugin_leaderf_enabled
     " quickly locate files, buffers, mrus in large project
-    Bundle 'Yggdroot/LeaderF', {'on', ['Leaderf', 'LeaderfBuffer', 'LeaderfBufferAll', 'LeaderfMru']}
+    Plug 'Yggdroot/LeaderF', {'on': ['Leaderf', 'LeaderfBuffer', 'LeaderfBufferAll', 'LeaderfMru']}
   endif
   if g:plugin_syntastic_enabled
     " syntax checking hacks for vim
-    Bundle 'scrooloose/syntastic', {'for': ['c', 'cpp', 'python']}
+    Plug 'scrooloose/syntastic', {'for': ['c', 'cpp', 'python']}
   endif
   if g:plugin_ycm_enabled
     " a code-completion engine for vim
-    Bundle 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python']}
+    Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python']}
     autocmd! User YouCompleteMe if !has('vim_starting') | call youcompleteme#Enable() | endif
   endif
 

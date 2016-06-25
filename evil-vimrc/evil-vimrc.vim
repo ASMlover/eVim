@@ -127,7 +127,7 @@ hi SpellBad ctermbg=52
 
 execute 'set runtimepath+=' . g:evim_rtp
 " configure for bundles plugins
-Import evil-plugconf.vim
+Import evil-plugsconf.vim
 " normal setting of evil-vimrc
 Import evil-setting.vim
 " configure for local vimrc

@@ -48,6 +48,11 @@ if not exist "%HOME%\.vim" (
   call mkdir "%HOME%\.vim"
 )
 
+if not exist "%HOME%\.vim\autoload%" (
+  call mkdir "%HOME%\.vim\autoload"
+)
+call copy /Y plug-tools\plug.vim "%HOME%\.vim\autoload\"
+
 REM copy configure of vim
 call copy /Y vimrc "%HOME%\_vimrc"
 if exist "%HOME%\.vim\evil-vimrc" (
@@ -66,21 +71,7 @@ if not exist "%HOME%\.vim\syntax" (
 )
 call copy /y syntax\* "%HOME%\.vim\syntax"
 
-if not exist "%HOME%\.vim\bundle" (
-  call mkdir "%HOME%\.vim\bundle"
-)
-
-if not exist "%HOME%\.vim\bundle\Vundle.vim" (
-  echo cloning Vundle.vim ...
-  call git clone https://github.com/gmarik/Vundle.vim.git "%HOME%\.vim\bundle\Vundle.vim"
-) else (
-  echo updating Vundle.vim ...
-  call cd "%HOME%\.vim\bundle\Vundle.vim"
-  call git pull
-  call cd %HOME%
-)
-
-call gvim -u "%HOME%\.vim\evil-vimrc\evil-setup.vim" +PluginInstall +qall
+call gvim -u "%HOME%\.vim\evil-vimrc\evil-setup.vim" +PlugInstall +qall
 
 echo installing eVim successfully ...
 pause

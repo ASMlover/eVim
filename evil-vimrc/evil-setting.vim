@@ -85,4 +85,4 @@ endif
 autocmd! BufWritePre * :%s/\s\+$//e
 
 " configure for file-headers
-Import plugins-vimrc/evil-header.vim
+Import plugs-vimrc/evil-header.vim
