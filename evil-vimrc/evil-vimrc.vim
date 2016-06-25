@@ -105,7 +105,7 @@ if g:plugin_leaderf_enabled
   " `,p` the same as `,f`
   nnoremap <silent> <leader>p :Leaderf<CR>
 endif
-if g:using_matching_vimrc
+if g:plugin_sccompile_enabled
   " key-mapping for SingleCompile(compile or run a single source file)
   nnoremap <silent> <F8> :SCCompileRun<CR>
   nnoremap <silent> <F9> :SCCompile<CR>

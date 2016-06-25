@@ -34,7 +34,6 @@ call vundle#rc()
 
 " bundles here are part of the core setup.
 " DO NOT add bundles to this list, as they might get removed when you upgrade.
-" please create ~/.vim/vimrc.bundles.local and add any extra bundles you want.
 
 " the plugin manager for vim
 Bundle 'gmarik/Vundle.vim'
@@ -61,15 +60,9 @@ Bundle 'danro/rename.vim'
 " smart status airline for vim
 Bundle 'ASMlover/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
-if g:using_matching_vimrc
+if g:plugin_sccompile_enabled
   " a plugin marking it more convenient to compile or run a single source file
   Bundle 'xuhdev/SingleCompile'
-  " next generation completion framework after neocomplcache
-  Bundle 'Shougo/neocomplete.vim'
-  " async clang code completion
-  Bundle 'osyo-manga/vim-marching'
-  " interactive command execution in vim
-  Bundle 'Shougo/vimproc.vim'
 endif
 if g:plugin_ctrlp_enabled
   " full path fuzzy file, buffer, meu, tag... finder for vim
@@ -79,17 +72,9 @@ if g:plugin_leaderf_enabled
   " quickly locate files, buffers, mrus in large project
   Bundle 'Yggdroot/LeaderF'
 endif
-if g:plugin_pyflakes_enabled
-  " a plugin for checking Python code on the fly
-  Bundle 'kevinw/pyflakes-vim'
-endif
 if g:plugin_syntastic_enabled
   " syntax checking hacks for vim
   Bundle 'scrooloose/syntastic'
-endif
-if g:plugin_jedi_enabled
-  " jedi autocompletion
-  Bundle 'davidhalter/jedi-vim'
 endif
 if g:plugin_ycm_enabled
   " a code-completion engine for vim
