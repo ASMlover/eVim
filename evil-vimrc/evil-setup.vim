@@ -51,7 +51,7 @@ filetype plugin indent on
 " load configure
 Import evil-conf.vim
 " install vundle bundles
-Import evil-bundles.vim
+Import evil-plugs.vim
 
 " enable syntax highlighting
 syntax on
