@@ -48,22 +48,11 @@
         \> git clone https://github.com/ASMlover/eVim.git
         \> install.bat
 
-  * **Building vimproc.vim**
-    - **32bit**
-
-            \> cd %HOME%\.vim\bundle\vimproc.vim
-            \> mingw32_make -f make_mingw32.mak
-
-    - **64bit**
-
-            \> cd %HOME%\.vim\bundle\vimproc.vim
-            \> mingw32_make -f make_mingw64.mak
-
   * **Installing powerline-fonts**
 
     Copy powerline fonts from .\extra\powerline-fonts into your system fonts directory.
 
-          \> copy /Y .\extra\powerline-fonts\*.* C:\Windows\Fonts
+          \> copy /Y .\extras\powerline-fonts\*.* C:\Windows\Fonts
 
   * **Building YCM**
 
@@ -108,11 +97,6 @@
 
         $ git clone https://github.com/ASMlover/eVim.git
         $ ./install.sh install
-
-  * **Building vimproc.vim**
-
-        $ cd ~/.vim/bundle/vimproc.vim
-        $ make
 
   * **Installing powerline-fonts**
 
