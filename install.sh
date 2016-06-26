@@ -30,6 +30,7 @@
 app_name='eVim'
 app_dir=$(cd `dirname $0`; pwd)
 app_url='https://github.com/ASMlover/eVim.git'
+vim_plug_url='https://github.com/junegunn/vim-plug.git'
 
 upgrade_repo() {
   echo "updating $1 ..."
@@ -59,7 +60,15 @@ create_vimrc() {
     mkdir -p $HOME/.vim/autoload
   fi
 
-  cp $app_dir/tools/plug.vim $HOME/.vim/autoload
+  if [ ! -d $app_dir/vim-plug ]; then
+    echo "cloning vim-plug ..."
+    git clone $vim_plug_url
+  else
+    echo "upgrading vim-plug ..."
+    cd vim-plug && git pull
+    cd ..
+  fi
+  cp $app_dir/vim-plug/plug.vim $HOME/.vim/autoload
   cp $app_dir/vimrc $HOME/.vimrc
   if [ -d $HOME/.vim/evil-vimrc ]; then
     rm -rf $HOME/.vim/evil-vimrc
