@@ -29,7 +29,6 @@
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
 
-
 " Plugs here are part of the core setup.
 " DO NOT add plugs to this list, as they might get removed when you upgrade.
 " Please add any extra plugs you want in ./local/plugs.vim.
