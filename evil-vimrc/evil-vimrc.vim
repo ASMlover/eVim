@@ -33,7 +33,6 @@ set backspace=2                                              " Fix broken backsp
 set showcmd
 set smarttab                                                 " setting smart tab
 if g:using_tab_indent
-  set noexpandtab                                            " do not expand tab to space
   set tabstop=4                                              " actual tabs occupy 4 characters
   set shiftwidth=4                                           " normal mode indentation commands use 4 spaces
   set softtabstop=4                                          " insert mode tab and backspace use 4 spaces
@@ -126,7 +125,7 @@ nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 hi SpellBad ctermbg=52
 
 execute 'set runtimepath+=' . g:evim_rtp
-" configure for bundles plugins
+" configure for plugins
 Import evil-plugsconf.vim
 " normal setting of evil-vimrc
 Import evil-setting.vim
