@@ -25,7 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-Import evil-setup.vim
+Import evil-install.vim
 
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
@@ -126,8 +126,8 @@ hi SpellBad ctermbg=52
 
 execute 'set runtimepath+=' . g:evim_rtp
 " configure for plugins
-Import evil-plugsconf.vim
-" normal setting of evil-vimrc
-Import evil-setting.vim
+Import evil-plugins-conf.vim
+" default setting of evil-vimrc
+Import evil-default.vim
 " configure for local vimrc
-Import local/vimrc.vim
+Import local/evil-vimrc.vim
