@@ -83,7 +83,7 @@ if not exist "%HOME%\.vim\syntax" (
 )
 call copy /y extras\syntax\* "%HOME%\.vim\syntax"
 
-call gvim -u "%HOME%\.vim\evil-vimrc\evil-setup.vim" +PlugInstall +qall
+call gvim -u "%HOME%\.vim\evil-vimrc\evil-install.vim" +PlugInstall +qall
 
 echo installing eVim successfully ...
 pause

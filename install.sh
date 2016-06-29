@@ -51,6 +51,18 @@ clone_repo() {
   fi
 }
 
+install_vim_plug() {
+  echo "install vim-plug ..."
+  if [ ! -d $app_dir/vim-plug ]; then
+    echo "cloning vim-plug ..."
+    git clone $plug_url
+  else
+    echo "upgrading vim-plug ..."
+    cd vim-plug && git pull && cd -
+  fi
+  cp $app_dir/vim-plug/plug.vim $HOME/.vim/autoload
+}
+
 create_vimrc() {
   echo "creating configure for vim ..."
   if [ ! -d $HOME/.vim ]; then
@@ -60,15 +72,8 @@ create_vimrc() {
     mkdir -p $HOME/.vim/autoload
   fi
 
-  if [ ! -d $app_dir/vim-plug ]; then
-    echo "cloning vim-plug ..."
-    git clone $plug_url
-  else
-    echo "upgrading vim-plug ..."
-    cd vim-plug && git pull
-    cd ..
-  fi
-  cp $app_dir/vim-plug/plug.vim $HOME/.vim/autoload
+  install_vim_plug "successfully install vim-plug ..."
+
   cp $app_dir/vimrc $HOME/.vimrc
   if [ -d $HOME/.vim/evil-vimrc ]; then
     rm -rf $HOME/.vim/evil-vimrc
@@ -79,7 +84,7 @@ create_vimrc() {
 
 setup_vundle() {
   echo "setting vundles for vim ..."
-  vim -u $HOME/.vim/evil-vimrc/evil-setup.vim +PlugInstall +qall
+  vim -u $HOME/.vim/evil-vimrc/evil-install.vim +PlugInstall +qall
 }
 
 do_install() {
