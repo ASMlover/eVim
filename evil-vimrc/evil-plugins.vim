@@ -25,13 +25,13 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" configure Vundle
+" configure plugins
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
 
 " Plugs here are part of the core setup.
 " DO NOT add plugs to this list, as they might get removed when you upgrade.
-" Please add any extra plugs you want in ./local/plugs.vim.
+" Please add any extra plugs you want in ./local/evil-plugins.vim.
 call plug#begin('~/.vim/plugged')
   " molokai color scheme for vim
   Plug 'ASMlover/molokai'
@@ -49,10 +49,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
   " display the indention levels with thin vertical lines
   Plug 'Yggdroot/indentLine', {'on': 'LeadingSpaceToggle'}
-  " git commands in vim
-  Plug 'tpope/vim-fugitive'
   " rename the current file in the vim buffer and retain relative path
   Plug 'danro/rename.vim', {'on': 'Rename'}
+  " git commands in vim
+  Plug 'tpope/vim-fugitive'
   " smart status airline for vim
   Plug 'ASMlover/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -78,6 +78,6 @@ call plug#begin('~/.vim/plugged')
     autocmd! User YouCompleteMe if !has('vim_starting') | call youcompleteme#Enable() | endif
   endif
 
-  " install local bundles configure if available
-  Import local/plugs.vim
+  " install local plugins configure if available
+  Import local/evil-plugins.vim
 call plug#end()

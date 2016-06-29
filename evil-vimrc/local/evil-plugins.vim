@@ -25,33 +25,4 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" do not bother with vi compatibility, must be first line
-set nocompatible
-
-if !exists('g:evim_rtp') || !exists(':Import')
-  let g:evim_rtp = $HOME . '/.vim/evil-vimrc'
-  command! -nargs=1 Import execute 'source ' . g:evim_rtp . '/<args>'
-endif
-
-Import evil-utils.vim
-
-if !WINDOWS()
-  set shell=/bin/sh
-endif
-
-" on windows, we alse use '.vim' instead of 'vimfiles'; this make
-" synchronization across (heterogeneous) system easier
-if WINDOWS()
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
-endif
-
-" ensure ftdetect et al work by including this after the Vundle stuff
-filetype plugin indent on
-
-" load configure
-Import evil-conf.vim
-" install vundle bundles
-Import evil-plugs.vim
-
-" enable syntax highlighting
-syntax on
+" local plugins for customer
