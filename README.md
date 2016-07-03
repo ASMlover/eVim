@@ -64,7 +64,7 @@
           \> python install.py --clang-completer
 
   * **GVim in Windows**
-    ![GVim in Windows](./res/vim.windows.png "GVim in Windows")
+    ![GVim in Windows](./extras/res/vim.windows.png "GVim in Windows")
 
 
 ## **Linux**
@@ -116,7 +116,7 @@
         $ ./install.py --clang-completer
 
   * **Vim in Linux**
-    ![Vim in Linux](./res/vim.linux.png "Vim in Linux")
+    ![Vim in Linux](./extras/res/vim.linux.png "Vim in Linux")
 
 
 ## **macOS**
@@ -147,4 +147,4 @@
         $ ./install.py --clang-completer
 
   * **Vim in macOS**
-    ![Vim in macOS](./res/vim.darwin.png "Vim in macOS")
+    ![Vim in macOS](./extras/res/vim.darwin.png "Vim in macOS")
