@@ -29,14 +29,17 @@
 filetype on " without this vim emits a zero exit status, later, because of :ft off
 filetype off
 
-" Plugs here are part of the core setup.
-" DO NOT add plugs to this list, as they might get removed when you upgrade.
-" Please add any extra plugs you want in ./local/evil-plugins.vim.
+" Plugins here are part of the core setup.
+" DO NOT add plugins to this list, as they might get removed when you upgrade.
+" Please add any extra plugins you want in ~/.vim/evil-vimrc/local/evil-plugins.vim.
 call plug#begin('~/.vim/plugged')
-  " molokai color scheme for vim
-  Plug 'ASMlover/molokai'
-  " solarized color scheme for vim
-  Plug 'ASMlover/vim-colors-solarized'
+  if g:using_color_solarized
+    " solarized color scheme for vim
+    Plug 'ASMlover/vim-colors-solarized'
+  else
+    " molokai color scheme for vim
+    Plug 'ASMlover/molokai'
+  endif
   " help folks to align text, etc
   Plug 'vim-scripts/Align', {'on': 'Align'}
   " use ag(the_silver_searcher, better than ack, which is better than grep)

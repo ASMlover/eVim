@@ -30,6 +30,8 @@ let g:company_name='ASMlover'
 
 " default use space for indent
 let g:using_tab_indent=0
+" default use solarized colorscheme
+let g:using_color_solarized=1
 
 " enabled plugins
 let g:plugin_sccompile_enabled=0
