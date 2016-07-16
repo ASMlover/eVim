@@ -82,15 +82,15 @@ create_vimrc() {
   cp -R $app_dir/extras/syntax $HOME/.vim/
 }
 
-setup_vundle() {
-  echo "setting vundles for vim ..."
+setup_plugins() {
+  echo "setting vim-plug for vim ..."
   vim -u $HOME/.vim/evil-vimrc/evil-install.vim +PlugInstall +qall
 }
 
 do_install() {
   clone_repo    "successfully cloned" $app_name
   create_vimrc  "setting up vimrc"
-  setup_vundle  "now updating/installing plugins using Vundle"
+  setup_plugins "now updating/installing plugins using vim-plug"
   echo 'installing eVim successfully ...'
 }
 
