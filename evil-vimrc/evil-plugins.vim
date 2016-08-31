@@ -78,7 +78,6 @@ call plug#begin('~/.vim/plugged')
   if g:plugin_ycm_enabled
     " a code-completion engine for vim
     Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python']}
-    autocmd! User YouCompleteMe if !has('vim_starting') | call youcompleteme#Enable() | endif
   endif
 
   " install local plugins configure if available
