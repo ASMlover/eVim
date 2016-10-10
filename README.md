@@ -59,7 +59,7 @@
 
     If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it. Make sure you are installed CMake and setted the environment for using MSVC(VC2013+).
 
-          \> cd ~/.vim/bundle/YouCompleteMe
+          \> cd ~/.vim/plugged/YouCompleteMe
           \> git submodule update --init --recursive
           \> python install.py --clang-completer
 
@@ -112,7 +112,7 @@
 
     If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it.
 
-        $ cd ~/.vim/bundle/YouCompleteMe
+        $ cd ~/.vim/plugged/YouCompleteMe
         $ ./install.py --clang-completer
 
   * **Vim in Linux**
@@ -143,7 +143,7 @@
 
     If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it.
 
-        $ cd ~/.vim/bundle/YouCompleteMe
+        $ cd ~/.vim/plugged/YouCompleteMe
         $ ./install.py --clang-completer
 
   * **Vim in macOS**
