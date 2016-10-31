@@ -25,4 +25,15 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" local bundles plugins for customer
+Import plugs-vimrc/evil-nerdtree.vim
+Import plugs-vimrc/evil-indentline.vim
+" vim-airline configure
+Import plugs-vimrc/evil-airline.vim
+if g:plugin_syntastic_enabled
+  " syntastic configure
+  Import plugs-vimrc/evil-syntastic.vim
+endif
+if g:plugin_ycm_enabled
+  " ycm configure
+  Import plugs-vimrc/evil-ycm.vim
+endif

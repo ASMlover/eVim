@@ -1,7 +1,7 @@
 # **eVim**
 ***
 
-  **Configure files for Vim**.
+**Configure files for [Vim](https://github.com/vim/vim), built for Windows/Linux and macOS.**
 
 
 # **Usage**
@@ -46,35 +46,25 @@
   * **Installing eVim**
 
         \> git clone https://github.com/ASMlover/eVim.git
+        \> cd eVim
         \> install.bat
-
-  * **Building vimproc.vim**
-    - **32bit**
-
-            \> cd %HOME%\.vim\bundle\vimproc.vim
-            \> mingw32_make -f make_mingw32.mak
-
-    - **64bit**
-
-            \> cd %HOME%\.vim\bundle\vimproc.vim
-            \> mingw32_make -f make_mingw64.mak
 
   * **Installing powerline-fonts**
 
-    Copy powerline fonts from .\extra\powerline-fonts into your system fonts directory.
+    Copy powerline fonts from .\extra\powerline-fonts into your system fonts directory, you may need **Administrator permission**.
 
-          \> copy /Y .\extra\powerline-fonts\*.* C:\Windows\Fonts
+          \> copy /Y .\extras\powerline-fonts\*.* C:\Windows\Fonts
 
   * **Building YCM**
 
     If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it. Make sure you are installed CMake and setted the environment for using MSVC(VC2013+).
 
-          \> cd ~/.vim/bundle/YouCompleteMe
+          \> cd ~/.vim/plugged/YouCompleteMe
           \> git submodule update --init --recursive
           \> python install.py --clang-completer
 
   * **GVim in Windows**
-    ![GVim in Windows](./res/vim.windows.png "GVim in Windows")
+    ![GVim in Windows](./extras/res/vim.windows.png "GVim in Windows")
 
 
 ## **Linux**
@@ -107,12 +97,8 @@
   * **Installing eVim**
 
         $ git clone https://github.com/ASMlover/eVim.git
+        $ cd eVim
         $ ./install.sh install
-
-  * **Building vimproc.vim**
-
-        $ cd ~/.vim/bundle/vimproc.vim
-        $ make
 
   * **Installing powerline-fonts**
 
@@ -126,14 +112,14 @@
 
     If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it.
 
-        $ cd ~/.vim/bundle/YouCompleteMe
+        $ cd ~/.vim/plugged/YouCompleteMe
         $ ./install.py --clang-completer
 
   * **Vim in Linux**
-    ![Vim in Linux](./res/vim.linux.png "Vim in Linux")
+    ![Vim in Linux](./extras/res/vim.linux.png "Vim in Linux")
 
 
-## **OSX**
+## **macOS**
   See the document of the Linux part.
 
   * **Install vim7.4**
@@ -157,8 +143,8 @@
 
     If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it.
 
-        $ cd ~/.vim/bundle/YouCompleteMe
+        $ cd ~/.vim/plugged/YouCompleteMe
         $ ./install.py --clang-completer
 
-  * **Vim in OSX**
-    ![Vim in OSX](./res/vim.darwin.png "Vim in OSX")
+  * **Vim in macOS**
+    ![Vim in macOS](./extras/res/vim.darwin.png "Vim in macOS")

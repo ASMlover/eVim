@@ -25,18 +25,8 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" default company name for file-header
-let g:company_name='ASMlover'
-
-" default use space for indent
-let g:using_tab_indent=0
-" default use solarized colorscheme
-let g:using_color_solarized=1
-
-" enabled plugins
-let g:plugin_sccompile_enabled=0
-let g:plugin_ctrlp_enabled=0
-let g:plugin_leaderf_enabled=1
-let g:plugin_powerline_enabled=1
-let g:plugin_ycm_enabled=1
-let g:plugin_syntastic_enabled=1
+" configure for syntastic
+let g:syntastic_python_python_exec = 'python'
+let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = '-std=c++11 -stdlib=libc++'

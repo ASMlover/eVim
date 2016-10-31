@@ -73,6 +73,8 @@ augroup filetype
   " python
   if g:using_tab_indent
     au! FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+  else
+    au! FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
   endif
 augroup end
 
@@ -85,4 +87,4 @@ endif
 autocmd! BufWritePre * :%s/\s\+$//e
 
 " configure for file-headers
-Import plugins-vimrc/evil-header.vim
+Import plugs-vimrc/evil-header.vim

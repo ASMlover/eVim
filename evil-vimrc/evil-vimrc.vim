@@ -25,7 +25,7 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-Import evil-setup.vim
+Import evil-install.vim
 
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
@@ -33,7 +33,6 @@ set backspace=2                                              " Fix broken backsp
 set showcmd
 set smarttab                                                 " setting smart tab
 if g:using_tab_indent
-  set noexpandtab                                            " do not expand tab to space
   set tabstop=4                                              " actual tabs occupy 4 characters
   set shiftwidth=4                                           " normal mode indentation commands use 4 spaces
   set softtabstop=4                                          " insert mode tab and backspace use 4 spaces
@@ -64,7 +63,6 @@ set t_Co=256                                                 " set number of col
 set background=dark                                          " set {color} for the background
 set guifont=Consolas:h11                                     " set fonts be used for the gui version of vim
 if WINDOWS()
-  colorscheme solarized                                      " setting the currently active color scheme
   if has('gui_running')
     au GUIEnter * simalt ~x
   endif
@@ -76,8 +74,11 @@ if WINDOWS()
   language messages zh_CN.utf-8
 else
   let g:solarized_termcolors=256
-  " colorscheme molokai
-  colorscheme solarized
+endif
+if g:using_color_solarized
+  colorscheme solarized                                      " setting the currently active color scheme
+else
+  colorscheme molokai
 endif
 
 " keyboard shortcuts
@@ -105,7 +106,7 @@ if g:plugin_leaderf_enabled
   " `,p` the same as `,f`
   nnoremap <silent> <leader>p :Leaderf<CR>
 endif
-if g:using_matching_vimrc
+if g:plugin_sccompile_enabled
   " key-mapping for SingleCompile(compile or run a single source file)
   nnoremap <silent> <F8> :SCCompileRun<CR>
   nnoremap <silent> <F9> :SCCompile<CR>
@@ -122,23 +123,13 @@ nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 " key-mapping for reloading my vimrc
 nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
 
-" configure for nerdtree-tabs
-" let g:NERDTreeDirArrows=0 " diable this if not support NERDTreeDirArrows
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_open_on_new_tab=1
-
-" configure for indentLine
-let g:indentLine_enabled=0
-let g:indentLine_char='.'
-let g:indentLine_leadingSpaceChar='.'
-
 " configure for spell bad colors
 hi SpellBad ctermbg=52
 
 execute 'set runtimepath+=' . g:evim_rtp
-" configure for bundles plugins
-Import evil-plugins.vim
-" normal setting of evil-vimrc
-Import evil-setting.vim
+" configure for plugins
+Import evil-plugins-conf.vim
+" default setting of evil-vimrc
+Import evil-default.vim
 " configure for local vimrc
-Import local/vimrc.vim
+Import local/evil-vimrc.vim

@@ -25,19 +25,61 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-if g:using_matching_vimrc
-  " neocomplete configure
-  Import plugins-vimrc/evil-neocomplete.vim
-  " vim-marching configure
-  Import plugins-vimrc/evil-matching.vim
-endif
-" vim-airline configure
-Import plugins-vimrc/evil-airline.vim
-if g:plugin_syntastic_enabled
-  " syntastic configure
-  Import plugins-vimrc/evil-syntastic.vim
-endif
-if g:plugin_ycm_enabled
-  " ycm configure
-  Import plugins-vimrc/evil-ycm.vim
-endif
+" configure plugins
+filetype on " without this vim emits a zero exit status, later, because of :ft off
+filetype off
+
+" Plugins here are part of the core setup.
+" DO NOT add plugins to this list, as they might get removed when you upgrade.
+" Please add any extra plugins you want in ~/.vim/evil-vimrc/local/evil-plugins.vim.
+call plug#begin('~/.vim/plugged')
+  if g:using_color_solarized
+    " solarized color scheme for vim
+    Plug 'ASMlover/vim-colors-solarized'
+  else
+    " molokai color scheme for vim
+    Plug 'ASMlover/molokai'
+  endif
+  " help folks to align text, etc
+  Plug 'vim-scripts/Align', {'on': 'Align'}
+  " use ag(the_silver_searcher, better than ack, which is better than grep)
+  Plug 'rking/ag.vim', {'on': 'Ag'}
+  " a tree explorer plugin for vim
+  Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
+  " nerdtree and tabs together in vim
+  Plug 'jistr/vim-nerdtree-tabs', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
+  " a plugin that displays tags in a window
+  Plug 'majutsushi/tagbar', {'on': 'TagbarToggle'}
+  " display the indention levels with thin vertical lines
+  Plug 'Yggdroot/indentLine', {'on': 'LeadingSpaceToggle'}
+  " rename the current file in the vim buffer and retain relative path
+  Plug 'danro/rename.vim', {'on': 'Rename'}
+  " git commands in vim
+  Plug 'tpope/vim-fugitive'
+  " smart status airline for vim
+  Plug 'ASMlover/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  if g:plugin_sccompile_enabled
+    " a plugin marking it more convenient to compile or run a single source file
+    Plug 'xuhdev/SingleCompile', {'on': ['SCCompileRun', 'SCCompile']}
+  endif
+  if g:plugin_ctrlp_enabled
+    " full path fuzzy file, buffer, meu, tag... finder for vim
+    Plug 'kien/ctrlp.vim', {'on': ['CtrlP', 'CtrlPBuffer', 'CtrlPClearCache']}
+  endif
+  if g:plugin_leaderf_enabled
+    " quickly locate files, buffers, mrus in large project
+    Plug 'Yggdroot/LeaderF', {'on': ['Leaderf', 'LeaderfBuffer', 'LeaderfBufferAll', 'LeaderfMru']}
+  endif
+  if g:plugin_syntastic_enabled
+    " syntax checking hacks for vim
+    Plug 'scrooloose/syntastic', {'for': ['c', 'cpp', 'python']}
+  endif
+  if g:plugin_ycm_enabled
+    " a code-completion engine for vim
+    Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python']}
+  endif
+
+  " install local plugins configure if available
+  Import local/evil-plugins.vim
+call plug#end()

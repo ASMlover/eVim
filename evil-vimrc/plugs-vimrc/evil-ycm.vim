@@ -25,33 +25,30 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" do not bother with vi compatibility, must be first line
-set nocompatible
-
-if !exists('g:evim_rtp') || !exists(':Import')
-  let g:evim_rtp = $HOME . '/.vim/evil-vimrc'
-  command! -nargs=1 Import execute 'source ' . g:evim_rtp . '/<args>'
-endif
-
-Import evil-utils.vim
-
-if !WINDOWS()
-  set shell=/bin/sh
-endif
-
-" on windows, we alse use '.vim' instead of 'vimfiles'; this make
-" synchronization across (heterogeneous) system easier
-if WINDOWS()
-  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME
-endif
-
-" ensure ftdetect et al work by including this after the Vundle stuff
-filetype plugin indent on
-
-" load configure
-Import evil-conf.vim
-" install vundle bundles
-Import evil-bundles.vim
-
-" enable syntax highlighting
-syntax on
+" configure for YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/evil-vimrc/plugs-vimrc/ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf = 0
+set completeopt=longest,menu
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+let g:ycm_error_symbol = '>>'
+let g:ycm_warning_symbol = '>>'
+let g:ycm_min_num_of_chars_for_completion=1
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'markdown' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 1,
+      \ 'vimwiki' : 1,
+      \ 'pandoc' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1
+      \}
+let g:ycm_filetype_specific_completion_to_disable = {
+      \ 'gitcommit': 1
+      \}
+let g:ycm_complete_in_comments = 0
+let g:ycm_complete_in_strings = 1
+let g:ycm_key_invoke_completion = ''
+let g:ycm_python_binary_path = 'python'
