@@ -1,4 +1,4 @@
-# **eVim**
+# **eVim: Configure for Vim**
 ***
 
 **Configure files for [Vim](https://github.com/vim/vim), built for Windows/Linux and macOS.**
