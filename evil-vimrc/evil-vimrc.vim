@@ -122,6 +122,9 @@ nnoremap <silent> <leader>gc :Gcommit<CR>
 nnoremap <silent> <leader>ev :vsplit $MYVIMRC<CR>
 " key-mapping for reloading my vimrc
 nnoremap <silent> <leader>sv :source $MYVIMRC<CR>
+" key-mapping for YCM goto definition or declaration
+" use `CTRL-O` back `CTRL-I` goto again
+nnoremap <silent> <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " configure for spell bad colors
 hi SpellBad ctermbg=52
