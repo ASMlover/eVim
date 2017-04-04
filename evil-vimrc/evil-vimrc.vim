@@ -56,6 +56,7 @@ set number                                                   " show line numbers
 set ruler                                                    " show where you are
 set laststatus=2                                             " always show statusline
 set cursorline                                               " show cursor of current line
+set colorcolumn=80                                           " set a comma separated list of screen columns
 set autochdir                                                " auto change the current working directory while opening file
 " set clipboard=unnamedplus                                    " allow access system clipboard
 set listchars=tab:>-,trail:-                                 " show tab as '>---'
