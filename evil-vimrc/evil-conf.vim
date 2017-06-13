@@ -27,6 +27,8 @@
 
 " default company name for file-header
 let g:company_name='ASMlover'
+" default Windows platform version
+let g:platform_win10=0
 
 " default use space for indent
 let g:using_tab_indent=0
