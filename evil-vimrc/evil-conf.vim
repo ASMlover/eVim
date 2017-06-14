@@ -27,9 +27,13 @@
 
 " default company name for file-header
 let g:company_name='ASMlover'
-" default Windows platform version
-let g:platform_win10=0
 
+" default not use win10 guifont
+let g:using_win10_guifont=0
+" default not use powerline symbols (should be same as `using_win10_guifont`)
+let g:using_powerline_symbols=0
+" default use vim-powerline symbols
+let g:using_vim_powerline_symbols=1
 " default use space for indent
 let g:using_tab_indent=0
 " default use solarized colorscheme
