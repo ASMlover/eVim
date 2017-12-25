@@ -45,4 +45,4 @@ let g:plugin_ctrlp_enabled=0
 let g:plugin_leaderf_enabled=1
 let g:plugin_powerline_enabled=1
 let g:plugin_ycm_enabled=1
-let g:plugin_syntastic_enabled=1
+let g:plugin_ale_enabled=1

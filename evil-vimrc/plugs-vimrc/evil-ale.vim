@@ -1,4 +1,4 @@
-" Copyright (c) 2016 ASMlover. All rights reserved.
+" Copyright (c) 2017 ASMlover. All rights reserved.
 "
 " Redistribution and use in source and binary forms, with or without
 " modification, are permitted provided that the following conditions
@@ -25,18 +25,15 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-Import plugs-vimrc/evil-nerdtree.vim
-Import plugs-vimrc/evil-indentline.vim
-" vim-airline configure
-Import plugs-vimrc/evil-airline.vim
-if g:plugin_ale_enabled
-  " ale configure
-  Import plugs-vimrc/evil-ale.vim
-else
-  " syntastic configure
-  Import plugs-vimrc/evil-syntastic.vim
-endif
-if g:plugin_ycm_enabled
-  " ycm configure
-  Import plugs-vimrc/evil-ycm.vim
-endif
+" configure for ale
+let g:ale_sign_column_always = 1
+let g:ale_linters = {
+\  'python': ['pyflakes'],
+\}
+
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'

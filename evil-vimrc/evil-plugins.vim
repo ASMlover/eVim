@@ -71,8 +71,10 @@ call plug#begin('~/.vim/plugged')
     " quickly locate files, buffers, mrus in large project
     Plug 'Yggdroot/LeaderF', {'on': ['Leaderf', 'LeaderfBuffer', 'LeaderfBufferAll', 'LeaderfMru']}
   endif
-  if g:plugin_syntastic_enabled
-    " syntax checking hacks for vim
+  " syntax checking hacks for vim
+  if g:plugin_ale_enabled
+    Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python']}
+  else
     Plug 'scrooloose/syntastic', {'for': ['c', 'cpp', 'python']}
   endif
   if g:plugin_ycm_enabled
