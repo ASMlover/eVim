@@ -40,6 +40,8 @@ call plug#begin('~/.vim/plugged')
     " molokai color scheme for vim
     Plug 'ASMlover/molokai'
   endif
+  " a dark, low-contrast color scheme for vimdiff
+  Plug 'romainl/Apprentice'
   " help folks to align text, etc
   Plug 'vim-scripts/Align', {'on': 'Align'}
   " use ag(the_silver_searcher, better than ack, which is better than grep)
