@@ -27,7 +27,7 @@
 # **Install**
 ## **Windows**
   On Windows [Git](http://msysgit.github.io/), [MinGW](http://www.mingw.org/) and [Clang](http://www.llvm.org/) are required. Also, if you haven't already, you will need to install [Vim](http://www.vim.org/).
-  Requires Vim7.3.885+ compiled with [if_lua](http://vimdoc.sourceforge.net/htmldoc/if_lua.html). If :echo has("lua") returns 1, then you're done; otherwise, see below.
+  Requires Vim8.0+ compiled with [if_lua](http://vimdoc.sourceforge.net/htmldoc/if_lua.html). If :echo has("lua") returns 1, then you're done; otherwise, see below.
 
   * **Installing dependencies**
     - [Vim 32bit](http://files.kaoriya.net/vim/2013/vim73-kaoriya-win32-20130706.zip)
@@ -41,7 +41,7 @@
     **Note:** After installing Vim, you need to add it to your environment variable path. Just like:
 
         \> echo %VIMRUNTIME%
-        \> D:\Vim\vim74
+        \> D:\Vim\vim80
 
   * **Installing eVim**
 
@@ -69,7 +69,7 @@
 
 ## **Linux**
   On Linux [Git](http://git-scm.com/), [Clang](http://clang.llvm.org/) and [ag](https://github.com/ggreer/the_silver_searcher) are required. If you haven't already, you will need to install [Vim](http://www.vim.org/).
-  Requires Vim7.3.885+ compiled with [if_lua](http://vimdoc.sourceforge.net/htmldoc/if_lua.html). If :echo("lua") returns 1, then you're done; otherwise, see below.
+  Requires Vim8.0+ compiled with [if_lua](http://vimdoc.sourceforge.net/htmldoc/if_lua.html). If :echo("lua") returns 1, then you're done; otherwise, see below.
 
   * **Installing dependencies**
     - Install ag:
@@ -78,18 +78,17 @@
             $ ./build.sh
             $ sudo make install
 
-    - [vim-7.4.tar.bz2](http://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2)
     - Uninstall old Vim:
 
             $ sudo apt-get autoremove vim vim-runtime vim-tiny vim-common
 
-    - Install vim7.4(Ubuntu):
+    - Install vim8.0(Ubuntu):
 
             $ sudo apt-get install libncurses5-dev
             $ sudo apt-get install libpython
             $ sudo apt-get install liblua5.2-dev
-            $ tar jxvf vim-7.4.tar.bz2
-            $ cd vim74
+            $ git co https://github.com/vim/vim.git
+            $ cd vim
             $ ./configure --enable-luainterp --enable-pythoninterp --enable-python3interp --enable-gui=no --without-x --enable-multibyte --with-features=huge
             $ make
             $ sudo make install
@@ -122,13 +121,13 @@
 ## **macOS**
   See the document of the Linux part.
 
-  * **Install vim7.4**
+  * **Install vim8.0**
     - Append `#include <AvailabilityMacros.h>` into `os_unix.h`
-    - Compiling vim7.4
+    - Compiling vim8.0
 
             $ xcode-select --install
-            $ tar jxvf vim-7.4.tar.bz2
-            $ cd vim74
+            $ git co https://github.com/vim/vim.git
+            $ cd vim
             $ ./configure --enable-luainterp --enable-pythoninterp=yes --enable-gui=no --without-x --enable-multibyte --with-features=huge --enable-cscope --enable-fontset --enable-perlinterp --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config
             $ make
             $ sudo make install
