@@ -37,3 +37,11 @@ endfunction
 silent func! WINDOWS()
   return (has("win32") || has("win64"))
 endfunction
+
+silent func! RANDOM()
+  if WINDOWS()
+    return system('echo %RANDOM%')
+  else
+    return system('echo $RANDOM')
+  endif
+endfunction

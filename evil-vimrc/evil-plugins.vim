@@ -33,13 +33,10 @@ filetype off
 " DO NOT add plugins to this list, as they might get removed when you upgrade.
 " Please add any extra plugins you want in ~/.vim/evil-vimrc/local/evil-plugins.vim.
 call plug#begin('~/.vim/plugged')
-  if g:using_color_solarized
-    " solarized color scheme for vim
-    Plug 'ASMlover/vim-colors-solarized'
-  else
-    " molokai color scheme for vim
-    Plug 'ASMlover/molokai'
-  endif
+  " solarized color scheme for vim
+  Plug 'ASMlover/vim-colors-solarized'
+  " molokai color scheme for vim
+  Plug 'ASMlover/molokai'
   " a dark, low-contrast color scheme for vimdiff
   Plug 'romainl/Apprentice'
   " help folks to align text, etc
