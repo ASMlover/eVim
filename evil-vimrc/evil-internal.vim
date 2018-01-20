@@ -40,8 +40,24 @@ endfunction
 
 silent func! RANDOM()
   if WINDOWS()
-    return system('echo %RANDOM%')
+    return system("echo %RANDOM%")
   else
-    return system('echo $RANDOM')
+    return system("echo $RANDOM")
   endif
+endfunction
+
+silent func! SWITCH_COLOR()
+  let colors_array = [
+        \ ["molokai", 'light'],
+        \ ["molokai", 'dark'],
+        \ ["solarized", 'light'],
+        \ ["solarized", 'dark'],
+        \ ["apprentice", 'light'],
+        \ ["apprentice", 'dark'],
+        \ ["space-vim-dark", 'light'],
+        \ ["space-vim-dark", 'dark'],
+        \]
+  let use_color = colors_array[RANDOM() % len(colors_array)]
+  execute "colorscheme " . use_color[0]
+  execute "set background=" . use_color[1]
 endfunction

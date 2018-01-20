@@ -81,7 +81,9 @@ endif
 " else
 "   colorscheme molokai
 " endif
-execute 'colorscheme '. ['molokai', 'solarized', 'apprentice'][RANDOM() % 3]
+" execute 'colorscheme '. ['molokai', 'solarized', 'apprentice'][RANDOM() % 3]
+colorscheme space-vim-dark
+hi Comment cterm=italic
 if &diff
   colorscheme apprentice
 endif
