@@ -40,7 +40,7 @@ call plug#begin('~/.vim/plugged')
   " a dark, low-contrast color scheme for vimdiff
   Plug 'romainl/Apprentice'
   " a dark color scheme for vim
-  Plug 'ASMlover/space-vim-dark'
+  Plug 'ASMlover/SpaceDark'
   " help folks to align text, etc
   Plug 'vim-scripts/Align', {'on': 'Align'}
   " use ag(the_silver_searcher, better than ack, which is better than grep)
@@ -74,9 +74,9 @@ call plug#begin('~/.vim/plugged')
   endif
   " syntax checking hacks for vim
   if g:plugin_ale_enabled
-    Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python']}
+    Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'go']}
   else
-    Plug 'scrooloose/syntastic', {'for': ['c', 'cpp', 'python']}
+    Plug 'scrooloose/syntastic', {'for': ['c', 'cpp', 'python', 'go']}
   endif
   if g:plugin_ycm_enabled
     " a code-completion engine for vim
