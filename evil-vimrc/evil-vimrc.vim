@@ -54,6 +54,7 @@ set nobackup                                                 " do not create bac
 set noundofile                                               " do not create undo file
 set number                                                   " show line numbers
 set ruler                                                    " show where you are
+set hlsearch                                                 " open search highlight
 set laststatus=2                                             " always show statusline
 set cursorline                                               " show cursor of current line
 set colorcolumn=80                                           " set a comma separated list of screen columns
