@@ -76,7 +76,9 @@ call plug#begin('~/.vim/plugged')
   endif
   " syntax checking hacks for vim
   if g:plugin_ale_enabled
-    Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'go']}
+    " Plug 'w0rp/ale', {'for': ['c', 'cpp', 'python', 'go']}
+    Plug 'w0rp/ale', {'for': ['python']}
+    Plug 'scrooloose/syntastic', {'for': ['c', 'cpp', 'go']}
   else
     Plug 'scrooloose/syntastic', {'for': ['c', 'cpp', 'python', 'go']}
   endif
@@ -84,6 +86,7 @@ call plug#begin('~/.vim/plugged')
     " a code-completion engine for vim
     Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python']}
   endif
+  Plug 'nsf/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'}
 
   " install local plugins configure if available
   Import local/evil-plugins.vim
