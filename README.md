@@ -89,7 +89,7 @@
             $ sudo apt-get install liblua5.2-dev
             $ git co https://github.com/vim/vim.git
             $ cd vim
-            $ ./configure --enable-luainterp --enable-pythoninterp --enable-python3interp --enable-gui=no --without-x --enable-multibyte --with-features=huge
+            $ ./configure --enable-luainterp --enable-pythoninterp --enable-python3interp --enable-gui=no --without-x --enable-multibyte --with-features=huge --prefix=/home/asmlover/local/vim
             $ make
             $ sudo make install
 
@@ -128,7 +128,7 @@
             $ xcode-select --install
             $ git co https://github.com/vim/vim.git
             $ cd vim
-            $ ./configure --enable-luainterp --enable-pythoninterp=yes --enable-gui=no --without-x --enable-multibyte --with-features=huge --enable-cscope --enable-fontset --enable-perlinterp --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config
+            $ ./configure --enable-luainterp --enable-pythoninterp=yes --enable-gui=no --without-x --enable-multibyte --with-features=huge --enable-cscope --enable-fontset --enable-perlinterp --enable-rubyinterp --with-python-config-dir=/usr/lib/python2.7/config --prefix=/home/asmlover/local/vim
             $ make
             $ sudo make install
 
