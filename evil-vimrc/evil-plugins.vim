@@ -84,7 +84,7 @@ call plug#begin('~/.vim/plugged')
   endif
   if g:plugin_ycm_enabled
     " a code-completion engine for vim
-    Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python']}
+    Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python', 'rust']}
   endif
   Plug 'nsf/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'}
   Plug 'fatih/vim-go', {'for': ['go'], 'do': ':GoUpdateBinaries'}
