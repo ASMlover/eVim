@@ -112,6 +112,7 @@
     If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it.
 
         $ cd ~/.vim/plugged/YouCompleteMe
+        $ git submodule update --init --recursive
         $ python3 ./install.py --clangd-completer
 
   * **Vim in Linux**
@@ -143,6 +144,7 @@
     If you enbaled plugin ycm(let g:plugin_ycm_enabled=1), you need to build it.
 
         $ cd ~/.vim/plugged/YouCompleteMe
+        $ git submodule update --init --recursive
         $ python3 ./install.py --clangd-completer
 
   * **Vim in macOS**
