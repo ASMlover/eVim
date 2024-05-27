@@ -40,3 +40,7 @@ if g:plugin_ycm_enabled
   " ycm configure
   Import plugs-vimrc/evil-ycm.vim
 endif
+if g:plugin_auto_popmenu_enabled
+  " vim-auto-popmenu configure
+  Import plugs-vimrc/evil-vim-auto-popmenu.vim
+endif

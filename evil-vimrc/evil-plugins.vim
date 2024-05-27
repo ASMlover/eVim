@@ -84,7 +84,12 @@ call plug#begin('~/.vim/plugged')
   endif
   if g:plugin_ycm_enabled
     " a code-completion engine for vim
-    Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python', 'rust']}
+    if g:plugin_auto_popmenu_enabled
+      Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'rust']}
+      Plug 'skywind3000/vim-auto-popmenu', {'for': ['python']}
+    else
+      Plug 'Valloric/YouCompleteMe', {'for': ['c', 'cpp', 'python']}
+    endif
   endif
   Plug 'nsf/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'}
   Plug 'fatih/vim-go', {'for': ['go'], 'do': ':GoUpdateBinaries'}

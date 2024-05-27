@@ -1,4 +1,4 @@
-" Copyright (c) 2016 ASMlover. All rights reserved.
+" Copyright (c) 2024 ASMlover. All rights reserved.
 "
 " Redistribution and use in source and binary forms, with or without
 " modification, are permitted provided that the following conditions
@@ -25,27 +25,11 @@
 " ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 " POSSIBILITY OF SUCH DAMAGE.
 
-" default company name for file-header
-let g:company_name='ASMlover'
-
-" default not use win10 guifont
-let g:using_win10_guifont=0
-" default not use powerline symbols (should be same as `using_win10_guifont`)
-let g:using_powerline_symbols=0
-" default use vim-powerline symbols
-let g:using_vim_powerline_symbols=1
-" default use space for indent
-let g:using_tab_indent=0
-" default use solarized colorscheme
-let g:using_color_solarized=1
-
-" enabled plugins
-let g:plugin_sccompile_enabled=0
-let g:plugin_ctrlp_enabled=0
-let g:plugin_leaderf_enabled=1
-let g:plugin_powerline_enabled=1
-let g:plugin_ycm_enabled=1
-let g:plugin_ale_enabled=1
-
-" if `vim-auto-popmenu` enabled, `ycm` disabled for python
-let g:plugin_auto_popmenu_enabled=0
+" enable this plugin for filetypes, '*' for all files.
+let g:apc_enable_ft = {'text':1, 'markdown':1, 'python':1}
+" source for dictionary, current or other loaded buffers, see ':help cpt'
+set cpt=.,k,w,b
+" don't select the first item.
+set completeopt=menu,menuone,noselect
+" suppress annoy messages.
+set shortmess+=c
